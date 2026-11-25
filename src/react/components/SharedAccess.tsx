@@ -1,20 +1,11 @@
+import ui from '../../../content/ui.json';
 import { motion } from "motion/react";
 import { X, Check, Zap } from "lucide-react";
 
 export function SharedAccess() {
-  const problems = [
-    "Expensive tools costing $99+/month each",
-    "Not affordable for beginners or freelancers",
-    "Multiple subscriptions to manage",
-    "Limited features on free versions",
-  ];
+  const problems = ui.sharedAccess.problems;
 
-  const solutions = [
-    "Get same premium tools at 90% lower price",
-    "Instant shared access via our secure dashboard",
-    "One single subscription for all tools",
-    "Full premium features unlocked",
-  ];
+  const solutions = ui.sharedAccess.solutions;
 
   return (
     <section className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -27,10 +18,10 @@ export function SharedAccess() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 tracking-tight leading-snug max-w-2xl mx-auto">
-              Why <span className="text-primary">Semrush Group Buy</span>?
+              {ui.sharedAccess.titlePrefix} <span className="text-primary">{ui.sharedAccess.titleBrand}</span>{ui.sharedAccess.headingSuffix}
             </h2>
             <p className="text-muted font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Enterprise pricing wasn&apos;t built for freelancers. Get the same toolkit with a lower monthly spend.
+              {ui.sharedAccess.intro}
             </p>
           </motion.div>
         </div>
@@ -47,7 +38,7 @@ export function SharedAccess() {
               <X className="w-8 h-8" />
             </div>
             <h3 className="text-xl md:text-2xl font-black text-white mb-6 leading-tight">
-              Without <span className="text-primary">shared access</span>
+              {ui.sharedAccess.withoutPrefix} <span className="text-primary">{ui.sharedAccess.accessLabel}</span>
             </h3>
             <ul className="space-y-6">
               {problems.map((item, i) => (
@@ -82,7 +73,7 @@ export function SharedAccess() {
                 <Check className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl md:text-2xl font-black mb-6 leading-tight">
-                With <span className="text-primary">shared access</span>
+                {ui.sharedAccess.withPrefix} <span className="text-primary">{ui.sharedAccess.accessLabel}</span>
               </h3>
               <ul className="space-y-6">
                 {solutions.map((item, i) => (
