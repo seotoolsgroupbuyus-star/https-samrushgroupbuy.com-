@@ -60,13 +60,13 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3"
             >
               <Link
-                href="/#pricing"
+                href={site.hero.primaryUrl}
                 className="bg-primary text-white px-6 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_0_28px_rgba(255,115,72,0.32)] flex items-center justify-center gap-2 group"
               >
                 {site.hero.primaryButton} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
-                href="/semrush-group-buy-guide"
+                href={site.hero.secondaryUrl}
                 className="glass text-white px-6 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-colors flex items-center justify-center"
               >
                 {site.hero.secondaryButton}
