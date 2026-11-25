@@ -27,6 +27,9 @@ content:
       - { name: favicon, label: Website favicon, type: image, options: { media: uploads } }
       - { name: supportWhatsappNumber, label: WhatsApp support number, type: string }
       - { name: description, label: Site description, type: text }
+      - { name: homeMetaTitle, label: Homepage SEO title, type: string }
+      - { name: homeMetaDescription, label: Homepage SEO description, type: text }
+      - { name: seoKeywords, label: Original site SEO keywords, type: string, list: true }
       - { name: googleSiteVerification, label: Google verification, type: string }
       - { name: exchangeRate, label: USD to PKR rate, type: number }
       - { name: couponCode, label: Coupon, type: string }
@@ -415,6 +418,9 @@ content:
     format: json
     fields:
       - { name: title, type: string }
+      - { name: seoTitle, label: Privacy SEO title, type: string }
+      - { name: seoDescription, label: Privacy SEO description, type: text }
+      - { name: seoKeywords, label: Privacy SEO keywords, type: string, list: true }
       - { name: lastUpdated, type: string }
       - name: sections
         type: object
