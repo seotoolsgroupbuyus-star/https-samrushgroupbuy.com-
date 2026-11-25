@@ -10,7 +10,7 @@ function save(p,v){fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n')}
 try {
  const site=read(paths[0]);site.hero.title=marker+'_HERO';site.plans[0].monthlyPrice=919;save(paths[0],site);
  const ui=read(paths[1]);ui.footer.description=marker+'_FOOTER';save(paths[1],ui);
- const article=read(paths[2]);article.title=marker+'_ARTICLE';save(paths[2],article);
+ const article=read(paths[2]);article.title=marker+'_ARTICLE';article.customFullBody='<h2>'+marker+'_BODY</h2><p>Independent article content</p>';save(paths[2],article);
  execFileSync('npm',['run','build'],{stdio:'inherit',timeout:180000,env:process.env});
  const home=fs.readFileSync('dist/index.html','utf8');
  const guide=fs.readFileSync('dist/semrush-group-buy-guide/index.html','utf8');
@@ -18,7 +18,8 @@ try {
  assert.ok(home.includes(marker+'_FOOTER'),'CMS footer edit not visible in homepage HTML');
  assert.ok(home.includes('919'),'CMS pricing edit not visible in homepage HTML');
  assert.ok(guide.includes(marker+'_ARTICLE'),'CMS article title edit not visible in article HTML');
- console.log('CMS LIVE BUILD TEST PASS: changing site JSON, UI copy, plan price and article title updates generated pages.');
+ assert.ok(guide.includes(marker+'_BODY'),'CMS per-page full rich-text article override missing from generated HTML');
+ console.log('CMS LIVE BUILD TEST PASS: changing site JSON, UI copy, plan price, article title and per-page rich-text body override update generated pages.');
 } finally {
  for(const [p,text] of backups)fs.writeFileSync(p,text);
 }
