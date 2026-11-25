@@ -1,0 +1,2 @@
+# Netlify: use the Next.js runtime / adapter if you deploy there.
+# Old SPA fallback removed after Next.js migration.

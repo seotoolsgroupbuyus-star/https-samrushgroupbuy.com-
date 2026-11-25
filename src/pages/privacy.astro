@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import {SiteApp} from '../react/SiteApp';
+import privacy from '../../content/privacy.json';
+---
+<Base title={privacy.title+' | SemrushGroupBuy'} pathname="/privacy/"><SiteApp type="privacy" client:load /></Base>

@@ -1,0 +1,133 @@
+settings:
+  content:
+    merge: true
+media:
+  - name: uploads
+    label: Website images
+    input: public/images
+    output: /images
+    categories: [image]
+content:
+  - name: website
+    label: Homepage, Pricing, FAQs and Reviews
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name, label: Website name, type: string }
+      - { name: siteUrl, label: Website URL, type: string }
+      - { name: paymentBaseUrl, label: Payment website, type: string }
+      - { name: description, label: Site description, type: text }
+      - { name: googleSiteVerification, label: Google verification, type: string }
+      - { name: exchangeRate, label: USD to PKR rate, type: number }
+      - { name: couponCode, label: Coupon, type: string }
+      - name: hero
+        label: Homepage hero content
+        type: object
+        fields:
+          - { name: badge, type: string }
+          - { name: title, type: string }
+          - { name: subtitle, type: string }
+          - { name: description, type: text }
+          - { name: primaryButton, type: string }
+          - { name: secondaryButton, type: string }
+          - { name: toolStrip, type: string, list: true }
+      - { name: faqIntro, label: FAQ introduction, type: text }
+      - name: plans
+        label: Pricing plans
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{name}" }
+        fields:
+          - { name: id, type: string }
+          - { name: name, type: string }
+          - { name: description, type: text }
+          - { name: monthlyPrice, type: number }
+          - { name: buyUrl, type: string }
+          - name: features
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{text}" }
+            fields:
+              - { name: text, type: string }
+              - { name: unique, type: boolean }
+              - { name: tooltip, type: text }
+          - { name: tools, type: string, list: true }
+      - { name: bundleTools, label: Included tools, type: string, list: true }
+      - name: modalRows
+        label: Detailed plan comparison
+        type: object
+        list: true
+        fields:
+          - { name: label, type: string }
+          - { name: plans, type: string, list: true }
+      - name: faq
+        label: Frequently asked questions
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{question}" }
+        fields:
+          - { name: question, type: string }
+          - { name: answer, type: text }
+      - name: reviews
+        label: Customer testimonials
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{name}" }
+        fields:
+          - { name: name, type: string }
+          - { name: location, type: string }
+          - { name: title, type: string }
+          - { name: text, type: text }
+          - { name: stars, type: number }
+          - { name: date, type: string }
+      - name: featuredTools
+        label: Homepage tool cards
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string }
+          - { name: color, type: string }
+      - { name: allTools, label: All tools, type: string, list: true }
+      - name: authorProfiles
+        label: Authors
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string }
+          - { name: jobTitle, type: string }
+          - { name: bio, type: text }
+          - { name: url, type: string }
+  - name: articles
+    label: SEO pages
+    type: collection
+    path: content/articles
+    format: json
+    filename: "{slug}.json"
+    view: { primary: title, fields: [title, slug, status] }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: status, type: select, options: { values: [published, draft] } }
+      - { name: description, type: text }
+      - { name: content, label: Article body, type: rich-text, options: { format: html, media: uploads, switcher: false } }
+      - { name: cluster, type: string }
+      - { name: isPillar, type: boolean }
+      - { name: parentSlug, type: string }
+      - { name: metaTitle, label: SEO title, type: string }
+      - { name: metaDescription, label: SEO description, type: text }
+  - name: privacy
+    label: Privacy policy
+    type: file
+    path: content/privacy.json
+    format: json
+    fields:
+      - { name: title, type: string }
+      - { name: lastUpdated, type: string }
+      - name: sections
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{title}" }
+        fields:
+          - { name: title, type: string }
+          - { name: body, type: text }

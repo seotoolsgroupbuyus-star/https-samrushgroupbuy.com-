@@ -1,0 +1,471 @@
+{
+  "name": "SemrushGroupBuy",
+  "siteUrl": "https://samrushgroupbuy.com",
+  "paymentBaseUrl": "https://pay.samrushgroupbuy.com",
+  "description": "Premium Semrush Group Buy Access for SEO Professionals.",
+  "googleSiteVerification": "4BHqjUJ5n_6F9Pmrf_aAPVwy6TmwgPh5vgir-yAnQDg",
+  "plans": [
+    {
+      "id": "semrush",
+      "name": "Semrush",
+      "monthlyPrice": 5,
+      "buyUrl": "https://pay.samrushgroupbuy.com",
+      "description": "Simple Semrush access for basic keyword + domain research.",
+      "features": [
+        {
+          "text": "Semrush core research",
+          "unique": true,
+          "tooltip": "Keyword + domain research workflows for day-to-day SEO checks."
+        },
+        {
+          "text": "Keyword Overview",
+          "unique": false,
+          "tooltip": "Volume, difficulty, CPC and trends for keywords."
+        },
+        {
+          "text": "Domain Overview",
+          "unique": false,
+          "tooltip": "Traffic estimates, top keywords, and competitors snapshot."
+        },
+        {
+          "text": "Backlink overview",
+          "unique": false,
+          "tooltip": "Referring domains and backlink counts at a glance."
+        },
+        {
+          "text": "Basic support",
+          "unique": false,
+          "tooltip": "We reply to billing and access questions during support hours."
+        }
+      ]
+    },
+    {
+      "id": "semrush-ahrefs",
+      "name": "Semrush + Ahrefs",
+      "monthlyPrice": 25,
+      "buyUrl": "https://pay.samrushgroupbuy.com",
+      "description": "Semrush plus Ahrefs access for stronger backlink + competitor research.",
+      "features": [
+        {
+          "text": "Semrush access included",
+          "unique": false,
+          "tooltip": "Everything in the Semrush plan, plus extra tool coverage."
+        },
+        {
+          "text": "Ahrefs access included",
+          "unique": true,
+          "tooltip": "Backlink and competitor intelligence workflows via Ahrefs."
+        },
+        {
+          "text": "Keyword research + backlinks",
+          "unique": true,
+          "tooltip": "Use both data sources depending on your workflow."
+        },
+        {
+          "text": "Better for freelancers",
+          "unique": false,
+          "tooltip": "Good balance of cost and capability for client work."
+        },
+        {
+          "text": "Priority support",
+          "unique": false,
+          "tooltip": "Faster replies for Semrush + Ahrefs members."
+        }
+      ]
+    },
+    {
+      "id": "bundle",
+      "name": "20+ Tools Bundle",
+      "monthlyPrice": 35,
+      "buyUrl": "https://pay.samrushgroupbuy.com",
+      "description": "Best value bundle: Semrush + Ahrefs + 20+ premium tools in one dashboard.",
+      "tools": [
+        "Semrush Guru",
+        "Ahrefs",
+        "Moz Pro",
+        "Majestic",
+        "KWFinder",
+        "KeywordTool.io",
+        "Ubersuggest",
+        "Serpstat",
+        "AnswerThePublic",
+        "Woorank",
+        "SpyFu",
+        "SEOptimer",
+        "ChatGPT 4",
+        "Bypass GPT",
+        "Grammarly",
+        "WordAi",
+        "Hix AI",
+        "QuillBot",
+        "Spin Rewriter",
+        "WordHero",
+        "Wordtune",
+        "SmartCopy",
+        "CloserCopy",
+        "Copymatic AI",
+        "Jasper AI",
+        "Rytr",
+        "Canva Pro",
+        "Crello",
+        "Envato Elements",
+        "Leonardo.AI",
+        "Freepik",
+        "Vecteezy",
+        "Designs.ai",
+        "CapCut Pro",
+        "PicsArt",
+        "FotoJet",
+        "Flaticon",
+        "InVideo",
+        "GPL Themes/Plugins",
+        "Netflix",
+        "Prime Video",
+        "Indexification",
+        "Sell The Trend",
+        "Helium 10",
+        "BuzzSumo",
+        "PicMonkey",
+        "Epidemic Sound",
+        "Slidebean",
+        "MotionArray",
+        "Prezi",
+        "Udemy",
+        "Skillshare",
+        "Turnitin",
+        "Coursera",
+        "Scribd Premium"
+      ],
+      "features": [
+        {
+          "text": "Everything in Semrush + Ahrefs",
+          "unique": false,
+          "tooltip": "Includes both Semrush and Ahrefs access."
+        },
+        {
+          "text": "20+ premium tools",
+          "unique": true,
+          "tooltip": "Extra SEO + content tools (Moz, SpyFu, Canva, Grammarly, etc.)."
+        },
+        {
+          "text": "Creative + writing apps",
+          "unique": true,
+          "tooltip": "Bundle-friendly tools for content teams."
+        },
+        {
+          "text": "Tool search inside plan",
+          "unique": false,
+          "tooltip": "Quickly search what’s included in your bundle."
+        },
+        {
+          "text": "Priority support",
+          "unique": false,
+          "tooltip": "Fast responses for bundle members."
+        }
+      ]
+    }
+  ],
+  "bundleTools": [
+    "Semrush Guru",
+    "Ahrefs",
+    "Moz Pro",
+    "Majestic",
+    "KWFinder",
+    "KeywordTool.io",
+    "Ubersuggest",
+    "Serpstat",
+    "AnswerThePublic",
+    "Woorank",
+    "SpyFu",
+    "SEOptimer",
+    "ChatGPT 4",
+    "Bypass GPT",
+    "Grammarly",
+    "WordAi",
+    "Hix AI",
+    "QuillBot",
+    "Spin Rewriter",
+    "WordHero",
+    "Wordtune",
+    "SmartCopy",
+    "CloserCopy",
+    "Copymatic AI",
+    "Jasper AI",
+    "Rytr",
+    "Canva Pro",
+    "Crello",
+    "Envato Elements",
+    "Leonardo.AI",
+    "Freepik",
+    "Vecteezy",
+    "Designs.ai",
+    "CapCut Pro",
+    "PicsArt",
+    "FotoJet",
+    "Flaticon",
+    "InVideo",
+    "GPL Themes/Plugins",
+    "Netflix",
+    "Prime Video",
+    "Indexification",
+    "Sell The Trend",
+    "Helium 10",
+    "BuzzSumo",
+    "PicMonkey",
+    "Epidemic Sound",
+    "Slidebean",
+    "MotionArray",
+    "Prezi",
+    "Udemy",
+    "Skillshare",
+    "Turnitin",
+    "Coursera",
+    "Scribd Premium"
+  ],
+  "modalRows": [
+    {
+      "label": "Semrush access",
+      "plans": [
+        "semrush",
+        "semrush-ahrefs",
+        "bundle"
+      ]
+    },
+    {
+      "label": "Ahrefs access",
+      "plans": [
+        "semrush-ahrefs",
+        "bundle"
+      ]
+    },
+    {
+      "label": "Core keyword + domain research",
+      "plans": [
+        "semrush",
+        "semrush-ahrefs",
+        "bundle"
+      ]
+    },
+    {
+      "label": "Backlinks deep research",
+      "plans": [
+        "semrush-ahrefs",
+        "bundle"
+      ]
+    },
+    {
+      "label": "20+ tools bundle",
+      "plans": [
+        "bundle"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is this the real Semrush data?",
+      "answer": "Yes, 100%. You are accessing real Semrush accounts through our secure dashboard. The data, metrics, and features match what you get on an official subscription for the included modules."
+    },
+    {
+      "question": "How do I use the Semrush Toolkit?",
+      "answer": "Subscribe to a plan that includes the toolkit, install the browser extension from our guide, log in, and you’ll see metrics on Google SERPs and pages you visit."
+    },
+    {
+      "question": "Can I use it on multiple devices?",
+      "answer": "Plans are built for fair single-session use. You can switch devices, but simultaneous sessions can trigger limits. Use one primary work machine when possible."
+    },
+    {
+      "question": "What happens if a tool goes down?",
+      "answer": "We monitor 24/7. If an account hits limits or is paused, our system rotates to a healthy seat so downtime is rare and usually brief."
+    },
+    {
+      "question": "Is my search history private?",
+      "answer": "Yes. Isolation keeps your projects and searches separate from other members in the pool."
+    },
+    {
+      "question": "What are the daily limits?",
+      "answer": "Limits depend on plan tier. Standard-style access often includes on the order of 30 credits per day for heavy reports. They reset every 24 hours."
+    },
+    {
+      "question": "Do you offer a refund if I'm not happy?",
+      "answer": "Yes. If something doesn’t work as described early on, contact support. We offer a clear refund window (see checkout terms)."
+    },
+    {
+      "question": "How do I pay?",
+      "answer": "Cards, PayPal, and other methods shown at checkout, all through encrypted providers."
+    },
+    {
+      "question": "Is there any software to download?",
+      "answer": "Core access is browser-based. Only the optional Semrush Toolkit uses a lightweight extension."
+    },
+    {
+      "question": "How fast is activation?",
+      "answer": "Most members receive credentials within minutes after payment confirmation."
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Hassan A.",
+      "location": "Pakistan",
+      "title": "Best group buy SEO tools service",
+      "text": "Best group buy SEO tools service I’ve tried. Ahrefs and SEMrush run smoothly. Access was instant and Telegram support is very helpful.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Adeel K.",
+      "location": "UAE",
+      "title": "Amazing value for 6 months",
+      "text": "Amazing service. I’ve been using SEMrush from here for 6 months. I saved a lot of money and still get premium features.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Bilal R.",
+      "location": "United Kingdom",
+      "title": "Great 24/7 assistance",
+      "text": "Great 24/7 assistance. They resolve issues quickly and properly.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Maria L.",
+      "location": "Spain",
+      "title": "One subscription, zero headaches",
+      "text": "If you are paying separately for multiple SEO tools then switch to this. One subscription makes everything easier. The support team replies very fast. Totally worth it.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Omar S.",
+      "location": "Saudi Arabia",
+      "title": "Easy to buy and use",
+      "text": "Easy to buy and easy to use. I purchased a few tools and everything worked as promised. I got access right away. I will use it again.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Aisha M.",
+      "location": "Canada",
+      "title": "Highly recommended platform",
+      "text": "I recommend this platform samrushgroupbuy.com. It gives the key tools in one place. It runs smoothly and helps with real results. I will keep using it for my work.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Usman T.",
+      "location": "India",
+      "title": "Everything worked immediately",
+      "text": "I bought multiple tools from here. The buying process was simple. Everything worked exactly as described. I could start using them immediately.",
+      "stars": 5,
+      "date": "Recently"
+    },
+    {
+      "name": "Alex P.",
+      "location": "United States",
+      "title": "Agency team use case",
+      "text": "We use a shared Semrush account for our team. Everyone can access full data. It helps us reduce costs and work faster.",
+      "stars": 5,
+      "date": "Recently"
+    }
+  ],
+  "featuredTools": [
+    {
+      "name": "Semrush",
+      "color": "border-primary/25 bg-primary/10"
+    },
+    {
+      "name": "Ahrefs",
+      "color": "border-accent/25 bg-accent/10"
+    },
+    {
+      "name": "Canva Pro",
+      "color": "border-cyan-400/20 bg-cyan-500/10"
+    },
+    {
+      "name": "Grammarly",
+      "color": "border-emerald-400/20 bg-emerald-500/10"
+    },
+    {
+      "name": "Moz Pro",
+      "color": "border-violet-400/20 bg-violet-500/10"
+    },
+    {
+      "name": "SpyFu",
+      "color": "border-fuchsia-400/20 bg-fuchsia-500/10"
+    },
+    {
+      "name": "Ubersuggest",
+      "color": "border-amber-400/20 bg-amber-500/10"
+    },
+    {
+      "name": "Envato",
+      "color": "border-lime-400/20 bg-lime-500/10"
+    }
+  ],
+  "allTools": [
+    "Semrush",
+    "Ahrefs",
+    "Canva Pro",
+    "Grammarly",
+    "Moz Pro",
+    "SpyFu",
+    "Ubersuggest",
+    "Envato",
+    "Indexification",
+    "Keyword Tool",
+    "WordAI",
+    "SpinRewriter",
+    "Quillbot",
+    "PicMonkey",
+    "StockUnlimited",
+    "Crello",
+    "DesignBold",
+    "Storybase",
+    "BuzzSumo",
+    "Alexa",
+    "Woorank",
+    "Serpstat",
+    "Majestic",
+    "AnswerThePublic",
+    "Mangools",
+    "Surfer SEO"
+  ],
+  "exchangeRate": 280,
+  "couponCode": "SEMRUSH20",
+  "authorProfiles": [
+    {
+      "name": "Bilal Fridi",
+      "jobTitle": "SEO Editor",
+      "bio": "Covers Semrush Group Buy plans, toolkit setup, and how to get reliable data without overpaying for retail seats.",
+      "url": "/"
+    },
+    {
+      "name": "Abdul Waheed",
+      "jobTitle": "Technical SEO Writer",
+      "bio": "Focuses on audits, limits, fair use, and staying stable on shared access — written for freelancers and small agencies.",
+      "url": "/"
+    },
+    {
+      "name": "Saeed Fadi",
+      "jobTitle": "Content Strategist",
+      "bio": "Writes comparison and trust guides: providers, pricing angles, and what to expect from group buy Semrush access.",
+      "url": "/"
+    }
+  ],
+  "hero": {
+    "badge": "Shared SEO toolkit · 2026",
+    "title": "Semrush Group Buy",
+    "subtitle": "Pro SEO access, not full retail price.",
+    "description": "Stable shared access with full Pro + Guru workflows at a fraction of official pricing.",
+    "primaryButton": "Get Access",
+    "secondaryButton": "View Features",
+    "toolStrip": [
+      "Keyword Magic Tool",
+      "Site Audit",
+      "Backlink Analytics",
+      "Position Tracking",
+      "Domain Overview"
+    ]
+  },
+  "faqIntro": "Billing, limits, toolkit install, and data: everything you need in one place."
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Dark shell: same family as before, lifted a step lighter */
+  --color-background: #111820;
+  --color-surface: #1b2430;
+  --color-primary: #ff7348;
+  --color-accent: #7e54ff;
+  --color-text: #f8fafc;
+  --color-muted: #a7b4c8;
+  --color-border: #2d3c52;
+
+  /* Light sections (home band): same navy + orange story, slightly softer */
+  --color-brand-navy: #2b4772;
+  --color-brand-navy-deep: #243a5f;
+  --color-brand-orange: #ff7018;
+  --color-brand-orange-bright: #ff9830;
+  --color-brand-orange-deep: #ef6408;
+  --color-brand-cream: #fdf9f7;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased selection:bg-primary/30 selection:text-primary;
+  }
+}
+
+@layer utilities {
+  /* Trustpilot-style star (Ahrefs reference) */
+  .tp-star {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: #00b67a;
+    padding: 0.25rem;
+    margin-right: 0.125rem;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .glass {
+    @apply bg-surface/40 backdrop-blur-xl border border-white/5;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50;
+  }
+}
