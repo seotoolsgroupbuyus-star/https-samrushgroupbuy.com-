@@ -1,7 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import {SiteApp} from '../react/SiteApp';
-export function getStaticPaths(){return Object.values(import.meta.glob('../../content/articles/*.json',{eager:true,import:'default'})).filter((a:any)=>a.status==='published').map((a:any)=>({params:{slug:a.slug},props:{article:a}}))}
+export function getStaticPaths(){
+  return Object.values(import.meta.glob('../../content/articles/*.json',{eager:true,import:'default'}))
+    .filter((article:any)=>article.status==='published')
+    .map((article:any)=>({params:{slug:article.slug},props:{article}}));
+}
 const {article}=Astro.props;
+const additionalKeywords=[article.cluster,article.title,article.slug.replace(/-/g,' ')];
 ---
-<Base title={article.metaTitle||article.title} description={article.metaDescription||article.description} pathname={'/'+article.slug+'/'} type="article"><SiteApp type="article" slug={article.slug} client:load /></Base>
+<Base title={article.metaTitle||article.title} description={article.metaDescription||article.description} keywords={additionalKeywords} pathname={'/'+article.slug+'/'} type="article">
+  <SiteApp type="article" slug={article.slug} client:load />
+</Base>
