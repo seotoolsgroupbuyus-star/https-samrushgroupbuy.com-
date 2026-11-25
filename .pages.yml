@@ -29,6 +29,7 @@ content:
       - { name: googleSiteVerification, label: Google verification, type: string }
       - { name: exchangeRate, label: USD to PKR rate, type: number }
       - { name: couponCode, label: Coupon, type: string }
+      - { name: articleOrder, label: SEO article display order, type: string, list: true }
       - name: hero
         label: Homepage hero content
         type: object
