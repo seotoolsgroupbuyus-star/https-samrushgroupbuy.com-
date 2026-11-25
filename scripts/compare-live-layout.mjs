@@ -30,7 +30,7 @@ async function inspect(url,label,viewport){
     const rect=el.getBoundingClientRect(),style=getComputedStyle(el);
     return {id:el.id||'',tag:el.tagName.toLowerCase(),top:Math.round(rect.top+scrollY),height:Math.round(rect.height),width:Math.round(rect.width),background:style.backgroundColor,color:style.color,fontFamily:style.fontFamily,fontSize:style.fontSize,paddingTop:style.paddingTop,paddingBottom:style.paddingBottom};
    };
-   return {title:document.title,body:details(document.body),nav:document.querySelector('nav')?details(document.querySelector('nav')):null,footer:document.querySelector('footer')?details(document.querySelector('footer')):null,sections:Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).map(details)};
+   return {title:document.title,body:details(document.body),nav:document.querySelector('nav')?details(document.querySelector('nav')):null,footer:document.querySelector('footer')?details(document.querySelector('footer')):null,sections:Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).map(details),relatedArticleLinks:Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).at(-1)?.querySelectorAll('a') ? Array.from(Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).at(-1).querySelectorAll('a')).map(a=>a.pathname) : []};
   });
   await page.screenshot({path:'reports/live-design/'+label+'.png',fullPage:true,animations:'disabled',timeout:60000});
   return metrics;
@@ -56,6 +56,8 @@ for(const [device,viewport] of values) for(const [pageName,pathname] of pages){
  compare('nav',live.nav,local.nav);
  compare('footer',live.footer,local.footer);
  if(live.sections.length!==local.sections.length)differences.push('section count '+live.sections.length+' vs '+local.sections.length);
+ if(pageName==='article' && JSON.stringify(live.relatedArticleLinks)!==JSON.stringify(local.relatedArticleLinks))
+   differences.push('related article link order differs from original source');
  for(let i=0;i<Math.min(live.sections.length,local.sections.length);i++)compare('section '+(i+1)+' '+live.sections[i].id,live.sections[i],local.sections[i]);
  const report={device,page:pageName,live,local,differences};
  fs.writeFileSync('reports/live-design/'+pageName+'-'+device+'.json',JSON.stringify(report,null,2));
