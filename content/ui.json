@@ -25,7 +25,9 @@
         "label": "FAQ",
         "href": "/#faq"
       }
-    ]
+    ],
+    "getAccessUrl": "/#pricing",
+    "mobileAccessUrl": "/#pricing"
   },
   "footer": {
     "description": "Reliable shared access for SEO teams and freelancers.",
@@ -356,7 +358,9 @@
     "authorProfile": "Author profile",
     "plansLabel": "Plans",
     "resources": "Supporting resources",
-    "exploreGuide": "Explore the full guide"
+    "exploreGuide": "Explore the full guide",
+    "ctaUrl": "/#pricing",
+    "sidebarUrl": "/#pricing"
   },
   "logo": {
     "primary": "semrush",
