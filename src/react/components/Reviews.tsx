@@ -2,7 +2,7 @@ import {site} from "../config/site";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 
-const reviews = site.reviews;;
+const reviews = site.reviews;
 
 export function Reviews() {
   return (
