@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import {site} from "../config/site";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -45,7 +46,7 @@ export function Pricing() {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   const exchangeRate = site.exchangeRate;
-  const recommendedId = "semrush-ahrefs";
+  const recommendedId = ui.pricing.recommendedPlanId;
 
   const formatPlanPrice = (usd: number) => {
     const baseUsd =
@@ -80,11 +81,11 @@ export function Pricing() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 tracking-tight leading-snug max-w-2xl mx-auto">
-            <span className="text-primary">Semrush Group Buy</span>{" "}
-            <span className="text-white/95">plans & pricing</span>
+            <span className="text-primary">{ui.pricing.brandHeading}</span>{" "}
+            <span className="text-white/95">{ui.pricing.titleRest}</span>
           </h2>
           <p className="text-muted text-base md:text-lg max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
-            Pick the plan that matches your budget. Clean pricing, no chrome-extension tier.
+            {ui.pricing.intro}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
