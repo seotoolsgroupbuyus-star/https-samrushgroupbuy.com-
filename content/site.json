@@ -445,19 +445,22 @@
       "name": "Bilal Fridi",
       "jobTitle": "SEO Editor",
       "bio": "Covers Semrush Group Buy plans, toolkit setup, and how to get reliable data without overpaying for retail seats.",
-      "url": "/"
+      "url": "/",
+      "imageUrl": ""
     },
     {
       "name": "Abdul Waheed",
       "jobTitle": "Technical SEO Writer",
       "bio": "Focuses on audits, limits, fair use, and staying stable on shared access — written for freelancers and small agencies.",
-      "url": "/"
+      "url": "/",
+      "imageUrl": ""
     },
     {
       "name": "Saeed Fadi",
       "jobTitle": "Content Strategist",
       "bio": "Writes comparison and trust guides: providers, pricing angles, and what to expect from group buy Semrush access.",
-      "url": "/"
+      "url": "/",
+      "imageUrl": ""
     }
   ],
   "hero": {
