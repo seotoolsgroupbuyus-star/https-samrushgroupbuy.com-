@@ -232,7 +232,8 @@
     ],
     "sslSecure": "SSL secure",
     "instantSetup": "Instant setup",
-    "readLimits": "Read transparent limitations"
+    "readLimits": "Read transparent limitations",
+    "tooltipHeading": "Feature"
   },
   "premiumTools": {
     "eyebrow": "SEO stack",
@@ -358,6 +359,21 @@
     "sidebarTitle": "On this page",
     "sidebarEyebrow": "Get access",
     "sidebarDescription": "Compare Lite through Agency tiers and start with the toolkit that matches your workflow.",
-    "sidebarButton": "View pricing & plans"
+    "sidebarButton": "View pricing & plans",
+    "partOf": "Part of:",
+    "preContentPrefix": "When you read about",
+    "authorProfile": "Author profile",
+    "plansLabel": "Plans",
+    "resources": "Supporting resources",
+    "exploreGuide": "Explore the full guide"
+  },
+  "logo": {
+    "primary": "semrush",
+    "secondary": "group buy",
+    "tagline": "Premium SEO Access"
+  },
+  "hero": {
+    "demoHeading": "Domain Overview",
+    "demoTag": "Global DB"
   }
 }
