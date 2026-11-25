@@ -60,7 +60,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                 href={`/${parent.slug}`}
                 className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/80 hover:text-white transition-colors"
               >
-                Part of: <span className="text-[var(--color-brand-orange-bright)]">{parent.title}</span>
+                {ui.article.partOf} <span className="text-[var(--color-brand-orange-bright)]">{parent.title}</span>
                 <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </Link>
             </div>
@@ -105,7 +105,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                   <h2 className="text-xl md:text-2xl font-bold text-[var(--color-brand-navy)] tracking-tight">{ui.article.mainPoints}</h2>
                   {/<\/?[a-z][^>]*>/i.test(page.content) ? <div dangerouslySetInnerHTML={{__html:page.content}} /> : <p>{page.content}</p>}
                   <p>
-                    When you read about <span className="text-slate-800 font-semibold">{page.title}</span>, the goal is
+                    {ui.article.preContentPrefix} <span className="text-slate-800 font-semibold">{page.title}</span>, the goal is
                     {ui.article.mainPointsSuffix}
                   </p>
                   <h3 className="text-base font-bold text-slate-800 pt-2">{ui.article.beforeSubscribe}</h3>
@@ -139,7 +139,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                     href="/#pricing"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] text-white px-8 py-3.5 text-xs font-black uppercase tracking-widest shadow-md shadow-orange-200/60 hover:opacity-95 transition-opacity shrink-0"
                   >
-                    View pricing <ArrowRight className="w-4 h-4" />
+                    {ui.article.ctaButton} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -180,10 +180,10 @@ export function DynamicPage({ slug }: { slug: string }) {
                       href={authorProfileUrl}
                       className="text-[var(--color-brand-navy)] hover:text-[var(--color-primary)] transition-colors"
                     >
-                      Author profile
+                      {ui.article.authorProfile}
                     </a>
                     <Link href="/#pricing" className="text-[var(--color-brand-navy)] hover:text-[var(--color-primary)] transition-colors">
-                      Plans
+                      {ui.article.plansLabel}
                     </Link>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export function DynamicPage({ slug }: { slug: string }) {
             {supportingPages.length > 0 && (
               <section className="space-y-5">
                 <h2 className="text-xl md:text-2xl font-black uppercase tracking-tight text-[var(--color-brand-navy)]">
-                  Supporting resources
+                  {ui.article.resources}
                 </h2>
                 <h3 className="text-base font-bold text-slate-800 pt-1">{ui.article.relatedArticles}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -221,7 +221,7 @@ export function DynamicPage({ slug }: { slug: string }) {
             {parent && (
               <section className="space-y-5">
                 <h2 className="text-xl md:text-2xl font-black uppercase tracking-tight text-[var(--color-brand-navy)]">
-                  Explore the full guide
+                  {ui.article.exploreGuide}
                 </h2>
                 <h3 className="text-base font-bold text-slate-800 pt-1">{ui.article.moreFromGuide}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -261,7 +261,7 @@ export function DynamicPage({ slug }: { slug: string }) {
           <div className="order-2 w-full lg:w-[300px] xl:w-[320px] shrink-0 flex flex-col gap-8 lg:min-h-0">
             <nav
               className="bg-white rounded-[1.75rem] border border-slate-200/90 shadow-sm p-5 md:p-6 lg:shrink-0"
-              aria-label="On this page"
+              aria-label={ui.article.sidebarTitle}
             >
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-brand-navy)] mb-4">{ui.article.sidebarTitle}</p>
               <ul className="space-y-1 max-h-[min(50vh,320px)] overflow-y-auto custom-scrollbar pr-1 -mr-1">
@@ -283,7 +283,7 @@ export function DynamicPage({ slug }: { slug: string }) {
               <div className="bg-white rounded-[1.75rem] border border-slate-200/90 shadow-lg p-6 md:p-7 ring-1 ring-slate-100">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-primary)] mb-2">{ui.article.sidebarEyebrow}</p>
                 <p className="text-lg font-black uppercase tracking-tight text-[var(--color-brand-navy)] mb-3 leading-snug">
-                  Semrush Group Buy
+                  {ui.article.siteName}
                 </p>
                 <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6">{ui.article.sidebarDescription}</p>
                 <Link
