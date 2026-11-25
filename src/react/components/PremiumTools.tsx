@@ -81,10 +81,10 @@ export function PremiumTools() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 md:mb-5 tracking-tight leading-snug max-w-xl mx-auto">
-            25+ tools · <span className="text-primary">{ui.premiumTools.eyebrow}</span>
+            {ui.premiumTools.countPrefix} <span className="text-primary">{ui.premiumTools.eyebrow}</span>
           </h2>
           <p className="text-muted font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            One membership: pro-grade SEO access plus the extra SaaS stack power users expect.
+            {ui.premiumTools.intro}
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ export function PremiumTools() {
             }}
             className="text-primary font-black text-base md:text-xl inline-flex items-center gap-2 mx-auto group hover:gap-3 transition-all"
           >
-            View all 25+ tools <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+            {ui.premiumTools.viewAll} <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
           </motion.button>
         </motion.div>
       </div>
@@ -150,7 +150,7 @@ export function PremiumTools() {
               <div className="p-5 md:p-6 border-b border-white/10 flex items-start justify-between gap-4 shrink-0">
                 <div>
                   <h3 id="tools-modal-title" className="text-lg md:text-xl font-black text-white leading-tight">
-                    All tools ({ALL_TOOLS.length})
+                    {ui.premiumTools.modalTitle} ({ALL_TOOLS.length})
                   </h3>
                   <p className="text-sm text-muted font-medium mt-1">{ui.premiumTools.description}</p>
                 </div>
@@ -168,7 +168,7 @@ export function PremiumTools() {
                   <Search className="w-4 h-4 text-muted shrink-0" />
                   <input
                     type="search"
-                    placeholder="Search tools…"
+                    placeholder={ui.premiumTools.searchPlaceholder}
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     className="bg-transparent text-sm font-semibold text-white outline-none w-full placeholder:text-muted"
@@ -196,7 +196,7 @@ export function PremiumTools() {
                   onClick={() => setModalOpen(false)}
                   className="w-full py-3.5 rounded-xl bg-primary text-white font-black text-sm uppercase tracking-widest hover:opacity-95 transition-opacity shadow-[0_0_24px_rgba(255,115,72,0.25)]"
                 >
-                  Close
+                  {ui.premiumTools.close}
                 </button>
               </div>
             </motion.div>
