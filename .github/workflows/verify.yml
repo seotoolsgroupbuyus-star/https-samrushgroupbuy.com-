@@ -19,4 +19,5 @@ jobs:
           test -f scripts/verify.mjs
       - run: npm install
       - run: npm run verify
+      - run: node scripts/verify-design-parity.mjs
       - run: npm run build
