@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import Link from "../shims/link";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Logo } from "./Logo";
@@ -16,16 +17,16 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 min-w-0">
             <Logo />
             <p className="text-muted text-sm leading-snug max-w-md">
-              Reliable shared access for SEO teams and freelancers.
+              {ui.footer.description}
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <div className="flex items-center gap-2 glass px-3 py-1.5 rounded-xl border-emerald-500/20">
                 <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse shrink-0" />
-                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60">Operational</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60">{ui.footer.operational}</span>
               </div>
               <div className="flex items-center gap-2 glass px-3 py-1.5 rounded-xl border-primary/20">
                 <ShieldCheck className="w-3.5 h-3.5 text-primary shrink-0" />
-                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60">SSL</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-white/60">{ui.footer.ssl}</span>
               </div>
             </div>
           </div>
@@ -35,10 +36,10 @@ export function Footer() {
               href="/privacy"
               className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors"
             >
-              Privacy Policy
+              {ui.footer.privacy}
             </Link>
             <p className="text-[11px] font-medium text-white/25">
-              © 2026 SemrushGroupBuy
+              {ui.footer.copyright}
             </p>
             <button
               type="button"
