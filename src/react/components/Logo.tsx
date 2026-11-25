@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 function SemrushMark({ className }: { className?: string }) {
   return (
     <svg
@@ -27,11 +28,11 @@ export function Logo() {
       </div>
       <div className="flex flex-col gap-0.5">
         <span className="text-[17px] font-extrabold tracking-[-0.02em] leading-none text-white">
-          <span className="lowercase">semrush</span>{" "}
-          <span className="text-primary font-black lowercase">group buy</span>
+          <span className="lowercase">{ui.logo.primary}</span>{" "}
+          <span className="text-primary font-black lowercase">{ui.logo.secondary}</span>
         </span>
         <span className="text-[8px] font-semibold tracking-[0.28em] text-muted uppercase">
-          Premium SEO Access
+          {ui.logo.tagline}
         </span>
       </div>
     </div>
