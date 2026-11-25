@@ -17,6 +17,7 @@ content:
       - { name: name, label: Website name, type: string }
       - { name: siteUrl, label: Website URL, type: string }
       - { name: paymentBaseUrl, label: Payment website, type: string }
+      - { name: supportWhatsappNumber, label: WhatsApp support number, type: string }
       - { name: description, label: Site description, type: text }
       - { name: googleSiteVerification, label: Google verification, type: string }
       - { name: exchangeRate, label: USD to PKR rate, type: number }
@@ -232,6 +233,29 @@ content:
           - { name: yearlyTitle, label: "Yearly Title", type: string }
           - { name: yearlySubtitle, label: "Yearly Subtitle", type: string }
           - { name: recommendedPlanId, label: "Recommended Plan Id", type: string }
+          - { name: monthly, label: "Monthly", type: string }
+          - { name: yearly, label: "Yearly", type: string }
+          - { name: usd, label: "Usd", type: string }
+          - { name: pkr, label: "Pkr", type: string }
+          - { name: recommended, label: "Recommended", type: string }
+          - { name: totalTools, label: "Total Tools", type: string }
+          - { name: buyNow, label: "Buy Now", type: string }
+          - { name: compareAll, label: "Compare All", type: string }
+          - { name: couponOffer, label: "Coupon Offer", type: string }
+          - { name: couponText, label: "Coupon Text", type: string }
+          - { name: close, label: "Close", type: string }
+          - { name: clearPricing, label: "Clear Pricing", type: string }
+          - { name: clearPricingDescription, label: "Clear Pricing Description", type: string }
+          - { name: yearlyBilling, label: "Yearly Billing", type: string }
+          - { name: yearlyDescription, label: "Yearly Description", type: string }
+          - { name: couponCopied, label: "Coupon Copied", type: string }
+          - { name: couponCopy, label: "Coupon Copy", type: string }
+          - { name: modalTitle, label: "Modal Title", type: string }
+          - { name: modalFeature, label: "Modal Feature", type: string }
+          - { name: benefits, label: "Benefits", type: string, list: true }
+          - { name: sslSecure, label: "Ssl Secure", type: string }
+          - { name: instantSetup, label: "Instant Setup", type: string }
+          - { name: readLimits, label: "Read Limits", type: string }
       - name: premiumTools
         label: "Premium Tools"
         type: object
@@ -240,6 +264,12 @@ content:
           - { name: title, label: "Title", type: string }
           - { name: description, label: "Description", type: string }
           - { name: emptyMessage, label: "Empty Message", type: string }
+          - { name: modalTitle, label: "Modal Title", type: string }
+          - { name: searchPlaceholder, label: "Search Placeholder", type: string }
+          - { name: close, label: "Close", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - { name: countPrefix, label: "Count Prefix", type: string }
+          - { name: viewAll, label: "View All", type: string }
       - name: reviews
         label: "Reviews"
         type: object
@@ -266,6 +296,8 @@ content:
         fields:
           - { name: title, label: "Title", type: string }
           - { name: responseHint, label: "Response Hint", type: string }
+          - { name: whatsappLabel, label: "Whatsapp Label", type: string }
+          - { name: whatsappNumberDisplay, label: "Whatsapp Number Display", type: string }
       - name: article
         label: "Article"
         type: object
@@ -279,6 +311,18 @@ content:
             fields:
               - { name: id, label: "Id", type: string }
               - { name: label, label: "Label", type: string }
+          - { name: overview, label: "Overview", type: string }
+          - { name: benefits, label: "Benefits", type: string }
+          - { name: benefitsIntro, label: "Benefits Intro", type: string }
+          - { name: beforeSubscribe, label: "Before Subscribe", type: string }
+          - { name: summary, label: "Summary", type: string }
+          - { name: quickComparison, label: "Quick Comparison", type: string }
+          - { name: comparisonTable, label: "Comparison Table", type: string }
+          - { name: relatedArticles, label: "Related Articles", type: string }
+          - { name: moreFromGuide, label: "More From Guide", type: string }
+          - { name: writtenBy, label: "Written By", type: string }
+          - { name: checkoutTrust, label: "Checkout Trust", type: string }
+          - { name: ctaQuestion, label: "Cta Question", type: string }
   - name: articles
     label: SEO pages
     type: collection
