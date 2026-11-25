@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import {site} from "../config/site";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -19,7 +20,7 @@ export function FAQ() {
           viewport={{ once: true }}
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-3 tracking-tight leading-snug max-w-md mx-auto">
-            FAQ
+            {ui.faq.heading}
           </h2>
           <p className="text-muted font-medium max-w-xl mx-auto leading-relaxed">
             {site.faqIntro}
