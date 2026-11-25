@@ -20,6 +20,7 @@ jobs:
       - run: npm install
       - run: npm run verify
       - run: npm run verify:cms
+      - run: node scripts/test-cms-edit.mjs
       - run: node scripts/verify-design-parity.mjs
       - run: npm run build
       - name: Verify Wrangler builds assets before deploying (no Cloudflare credentials needed)
