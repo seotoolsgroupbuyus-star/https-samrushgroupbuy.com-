@@ -46,6 +46,15 @@ for(const file of articleNames){
 assert.ok(articles.fields.find(f=>f.name==='content'&&f.type==='rich-text'&&f.options?.format==='html'),'Article content must have rich-text HTML editor');
 const data=JSON.parse(fs.readFileSync('content/site.json','utf8'));
 assert.ok(data.plans.every(p=>p.buyUrl===data.paymentBaseUrl),'All plan checkout URLs must use CMS payment host');
+const ui=JSON.parse(fs.readFileSync('content/ui.json','utf8'));
+for(const [label,url] of [
+ ['Hero Get Access',data.hero.primaryUrl],
+ ['Header Get Access',ui.navigation.getAccessUrl],
+ ['Mobile Get Access',ui.navigation.mobileAccessUrl]
+]){
+ assert.equal(url,data.paymentBaseUrl,label+' must point directly to the payment subdomain root');
+ assert.ok(/^https:\/\/pay\.[^/]+$/.test(url),label+' must not use cart/login/signup paths');
+}
 assert.ok(data.supportWhatsappNumber,'Support phone number missing');
 assert.ok(config.media.some(x=>x.name==='logos'),'Tool logo media source is missing');
 for(const entry of config.content){
