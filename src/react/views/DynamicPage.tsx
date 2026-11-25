@@ -4,6 +4,7 @@ import ui from '../../../content/ui.json';
 import Link from "../shims/link";
 import {
   PAGES,
+  site,
   SITE_CONFIG,
   getAuthorForSlug,
   authorInitialsFromName,
@@ -33,7 +34,7 @@ export function DynamicPage({ slug }: { slug: string }) {
 
   const supportingPages = Object.values(PAGES).filter((p) => p.parentSlug === page.slug);
 
-  const author = getAuthorForSlug(page.slug);
+  const author = site.authorProfiles.find(profile=>profile.name===page.authorName) ?? getAuthorForSlug(page.slug);
   const authorProfileUrl = absoluteUrl(SITE_CONFIG.url, author.url);
   const authorInitials = authorInitialsFromName(author.name);
 
@@ -87,6 +88,10 @@ export function DynamicPage({ slug }: { slug: string }) {
             {/* Blog-style article (single column, readable body) */}
             <article className="bg-white rounded-[1.75rem] border border-slate-200/90 shadow-sm p-6 md:p-8 lg:p-10 [&_h2]:scroll-mt-28">
               <div className="max-w-none text-slate-600 leading-relaxed font-semibold space-y-10 [&_strong]:font-bold">
+                {page.customFullBody ? (
+                  <div data-cms-article dangerouslySetInnerHTML={{ __html: page.customFullBody }} />
+                ) : (
+                  <>
                 <section id="introduction" className="space-y-4">
                   <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--color-primary)]">{ui.article.startHere}</p>
                   <h2 className="text-xl md:text-2xl font-bold text-[var(--color-brand-navy)] tracking-tight">{ui.article.introduction}</h2>
@@ -142,6 +147,8 @@ export function DynamicPage({ slug }: { slug: string }) {
                     {ui.article.ctaButton} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+                  </>
+                )}
               </div>
             </article>
 
