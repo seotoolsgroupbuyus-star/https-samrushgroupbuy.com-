@@ -99,7 +99,7 @@ export function Pricing() {
                   billingCycle === "monthly" ? "bg-surface text-white border border-white/10" : "text-muted hover:text-white"
                 )}
               >
-                Monthly
+                {ui.pricing.monthly}
               </motion.button>
               <motion.button
                 type="button"
@@ -110,7 +110,7 @@ export function Pricing() {
                   billingCycle === "yearly" ? "bg-surface text-white border border-white/10" : "text-muted hover:text-white"
                 )}
               >
-                Yearly <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-md">-20%</span>
+                {ui.pricing.yearly} <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-md">-20%</span>
               </motion.button>
             </div>
             <div className="flex glass p-1 rounded-xl border border-white/10">
@@ -123,7 +123,7 @@ export function Pricing() {
                   currency === "USD" ? "bg-primary text-white shadow-[0_0_16px_rgba(255,115,72,0.25)]" : "text-muted hover:text-primary"
                 )}
               >
-                USD
+                {ui.pricing.usd}
               </motion.button>
               <motion.button
                 type="button"
@@ -134,7 +134,7 @@ export function Pricing() {
                   currency === "PKR" ? "bg-primary text-white shadow-[0_0_16px_rgba(255,115,72,0.25)]" : "text-muted hover:text-primary"
                 )}
               >
-                PKR
+                {ui.pricing.pkr}
               </motion.button>
             </div>
           </div>
@@ -162,7 +162,7 @@ export function Pricing() {
               >
                 {isRec && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/30 whitespace-nowrap">
-                    Recommended for you
+                    {ui.pricing.recommended}
                   </div>
                 )}
 
@@ -207,7 +207,7 @@ export function Pricing() {
                                 {isBundleToolsFeature ? (
                                   <>
                                     <div className="font-black mb-2 text-primary uppercase tracking-widest text-[9px]">
-                                      Total tools: {totalBundleTools}
+                                      {ui.pricing.totalTools} {totalBundleTools}
                                     </div>
                                     <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto custom-scrollbar pr-1">
                                       {(plan.tools ?? []).map((t) => (
@@ -250,7 +250,7 @@ export function Pricing() {
                       : "bg-white/10 text-white border border-white/10 hover:bg-white/15"
                   )}
                 >
-                  Buy Now
+                  {ui.pricing.buyNow}
                 </motion.a>
               </motion.div>
             );
@@ -264,7 +264,7 @@ export function Pricing() {
             onClick={() => setModalOpen(true)}
             className="inline-flex items-center gap-2 text-white font-black text-sm hover:text-primary transition-colors group"
           >
-            Compare all features in detail
+            {ui.pricing.compareAll}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </div>
@@ -275,11 +275,11 @@ export function Pricing() {
             className="glass p-2 rounded-3xl flex flex-col md:flex-row items-center gap-4 md:gap-6 pr-4 md:pr-8 shadow-2xl border border-white/10"
           >
             <div className="bg-primary px-8 py-4 rounded-2xl font-black text-white text-lg italic tracking-[0.15em] shadow-lg shadow-primary/30">
-              SEMRUSH20
+              {site.couponCode}
             </div>
             <div className="text-center md:text-left px-2">
-              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-1">Limited time offer</p>
-              <p className="text-sm font-black text-white">Get extra 20% off on your first month</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-1">{ui.pricing.couponOffer}</p>
+              <p className="text-sm font-black text-white">{ui.pricing.couponText}</p>
             </div>
             <motion.button
               type="button"
@@ -292,11 +292,11 @@ export function Pricing() {
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4" /> Copied!
+                  <Check className="w-4 h-4" /> {ui.pricing.couponCopied}
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4" /> Copy code
+                  <Copy className="w-4 h-4" /> {ui.pricing.couponCopy}
                 </>
               )}
             </motion.button>
@@ -320,7 +320,7 @@ export function Pricing() {
                 className="relative w-full max-w-4xl bg-surface border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
               >
                 <div className="p-6 md:p-8 border-b border-white/10 flex justify-between items-center shrink-0">
-                  <h3 className="text-lg md:text-xl font-black text-white">Compare plans</h3>
+                  <h3 className="text-lg md:text-xl font-black text-white">{ui.pricing.modalTitle}</h3>
                   <button
                     type="button"
                     onClick={() => setModalOpen(false)}
@@ -334,7 +334,7 @@ export function Pricing() {
                   <table className="w-full text-left border-collapse text-sm">
                     <thead>
                       <tr>
-                        <th className="py-3 text-xs font-black text-muted uppercase tracking-widest">Feature</th>
+                        <th className="py-3 text-xs font-black text-muted uppercase tracking-widest">{ui.pricing.modalFeature}</th>
                         {PLANS.map((p) => (
                           <th key={p.id} className="py-3 px-2 text-xs font-black text-primary uppercase tracking-widest text-center">
                             {p.name}
@@ -366,7 +366,7 @@ export function Pricing() {
                     onClick={() => setModalOpen(false)}
                     className="px-8 py-3 bg-primary text-white rounded-xl font-black text-sm uppercase tracking-widest hover:opacity-95 transition-opacity shadow-[0_0_20px_rgba(255,115,72,0.25)]"
                   >
-                    Close
+                    {ui.pricing.close}
                   </button>
                 </div>
               </motion.div>
@@ -385,16 +385,16 @@ export function Pricing() {
             <div>
               <div className="inline-flex items-center gap-2 bg-primary/15 text-primary px-4 py-2 rounded-full border border-primary/25 mb-6">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/90">100% risk-free guarantee</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-white/90">{ui.pricing.guarantee}</span>
               </div>
               <h3 className="text-xl md:text-3xl font-black mb-5 tracking-tight leading-tight">
-                Clear pricing
+                {ui.pricing.clearPricing}
               </h3>
               <p className="text-muted font-medium mb-8 text-base md:text-lg leading-relaxed">
-                No surprise fees after checkout. Your plan is explained upfront, limits included.
+                {ui.pricing.clearPricingDescription}
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                {["No setup fees", "No contracts", "Cancel anytime", "24/7 support"].map((t) => (
+                {ui.pricing.benefits.map((t) => (
                   <div key={t} className="flex items-center gap-2 text-sm font-bold">
                     <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-300">
                       <CheckCircle2 className="w-4 h-4" />
@@ -405,35 +405,35 @@ export function Pricing() {
               </div>
               <div className="flex flex-wrap gap-6 text-[10px] font-black uppercase tracking-widest text-muted">
                 <span className="flex items-center gap-2 text-muted">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> SSL secure
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> {ui.pricing.sslSecure}
                 </span>
                 <span className="flex items-center gap-2 text-muted">
-                  <Zap className="w-4 h-4 text-primary" /> Instant setup
+                  <Zap className="w-4 h-4 text-primary" /> {ui.pricing.instantSetup}
                 </span>
               </div>
             </div>
             <div className="bg-white/5 p-8 md:p-10 rounded-[2.5rem] border border-white/10 backdrop-blur-sm">
               <h4 className="text-base md:text-lg font-black mb-3 leading-tight">
-                Yearly billing?
+                {ui.pricing.yearlyBilling}
               </h4>
               <p className="text-muted font-medium mb-6 text-sm leading-relaxed">
-                Lock in your access for a full year and save 20% vs paying monthly.
+                {ui.pricing.yearlyDescription}
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex justify-between items-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                  <span className="font-bold text-sm">Monthly billing</span>
-                  <span className="font-black">from $5/mo</span>
+                  <span className="font-bold text-sm">{ui.pricing.monthlyTitle}</span>
+                  <span className="font-black">{ui.pricing.monthlySubtitle}</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-primary rounded-2xl shadow-xl shadow-primary/25">
-                  <span className="font-bold text-sm">Yearly billing</span>
-                  <span className="font-black">pay yearly, save 20%</span>
+                  <span className="font-bold text-sm">{ui.pricing.yearlyTitle}</span>
+                  <span className="font-black">{ui.pricing.yearlySubtitle}</span>
                 </div>
               </div>
               <a
                 href="#limitations"
                 className="w-full text-primary font-black text-sm hover:text-white flex items-center justify-center gap-2 group transition-all"
               >
-                Read transparent limitations <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {ui.pricing.readLimits} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
