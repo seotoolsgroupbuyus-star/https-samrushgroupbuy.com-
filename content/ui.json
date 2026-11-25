@@ -219,16 +219,32 @@
     "clearPricing": "Clear pricing",
     "clearPricingDescription": "No surprise fees after checkout. Your plan is explained upfront, limits included.",
     "yearlyBilling": "Yearly billing?",
-    "yearlyDescription": "Lock in your access for a full year and save 20% vs paying monthly."
+    "yearlyDescription": "Lock in your access for a full year and save 20% vs paying monthly.",
+    "couponCopied": "Copied!",
+    "couponCopy": "Copy code",
+    "modalTitle": "Compare plans",
+    "modalFeature": "Feature",
+    "benefits": [
+      "No setup fees",
+      "No contracts",
+      "Cancel anytime",
+      "24/7 support"
+    ],
+    "sslSecure": "SSL secure",
+    "instantSetup": "Instant setup",
+    "readLimits": "Read transparent limitations"
   },
   "premiumTools": {
     "eyebrow": "SEO stack",
     "title": "Premium access",
-    "description": "One membership: pro-grade SEO access plus the extra SaaS stack power users expect.",
+    "description": "Typical bundles. Names may vary by stock.",
     "emptyMessage": "No tools match your search.",
     "modalTitle": "All tools",
     "searchPlaceholder": "Search tools…",
-    "close": "Close"
+    "close": "Close",
+    "intro": "One membership: pro-grade SEO access plus the extra SaaS stack power users expect.",
+    "countPrefix": "25+ tools ·",
+    "viewAll": "View all 25+ tools"
   },
   "reviews": {
     "heading": "Member feedback",
@@ -247,7 +263,8 @@
   "chat": {
     "title": "Support",
     "responseHint": "Typically replies fast",
-    "whatsappLabel": "WhatsApp chat"
+    "whatsappLabel": "WhatsApp chat",
+    "whatsappNumberDisplay": "WhatsApp: +44 7845 432224"
   },
   "article": {
     "siteName": "Semrush Group Buy",
