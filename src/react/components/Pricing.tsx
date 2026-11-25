@@ -222,7 +222,7 @@ export function Pricing() {
                                   </>
                                 ) : (
                                   <>
-                                    <div className="font-black mb-1 text-primary uppercase tracking-widest text-[9px]">Feature</div>
+                                    <div className="font-black mb-1 text-primary uppercase tracking-widest text-[9px]">{ui.pricing.tooltipHeading}</div>
                                     {f.tooltip}
                                   </>
                                 )}
