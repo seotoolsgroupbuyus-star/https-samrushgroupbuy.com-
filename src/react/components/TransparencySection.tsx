@@ -1,28 +1,9 @@
+import ui from '../../../content/ui.json';
 import { motion } from "motion/react";
 import { Users, Activity, Lock, ShieldAlert } from "lucide-react";
 
-const limitations = [
-  {
-    title: "Shared seats",
-    desc: "Seats are pooled to keep pricing low. Your work stays isolated; group-wide fair-use caps keep everyone online.",
-    icon: Users,
-  },
-  {
-    title: "Daily quotas",
-    desc: "Heavy exports and audits are limited per day so one member can’t burn the whole group’s credits. Resets every 24h.",
-    icon: Activity,
-  },
-  {
-    title: "No Semrush API",
-    desc: "Access is through dashboard + extension. Official Semrush API endpoints are not part of standard group buy plans.",
-    icon: Lock,
-  },
-  {
-    title: "Fair use",
-    desc: "No bots or aggressive scraping. That keeps shared accounts stable for the whole pool.",
-    icon: ShieldAlert,
-  },
-];
+const limitationIcons = {Users,Activity,Lock,ShieldAlert};
+const limitations=ui.transparency.limitations.map(item=>({...item,icon:limitationIcons[item.icon as keyof typeof limitationIcons]||ShieldAlert}));
 
 export function TransparencySection() {
   return (
@@ -38,13 +19,13 @@ export function TransparencySection() {
         >
           <div className="inline-flex items-center gap-2 bg-primary/15 text-primary px-4 py-2 rounded-full border border-primary/25 mb-6">
             <ShieldAlert className="w-4 h-4" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-white/90">Transparency first</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-white/90">{ui.transparency.badge}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-5 tracking-tight leading-snug">
-            <span className="text-primary">Semrush Group Buy</span> limits
+            <span className="text-primary">{ui.transparency.headingBrand}</span> {ui.transparency.headingRest}
           </h2>
           <p className="text-muted font-medium text-base md:text-lg leading-relaxed">
-            We spell out the trade-offs so your access stays stable: fair use, quotas, and what isn&apos;t included.
+            {ui.transparency.intro}
           </p>
         </motion.div>
 
@@ -76,10 +57,10 @@ export function TransparencySection() {
         >
           <div className="text-center md:text-left">
             <h4 className="text-lg md:text-xl font-black mb-2 leading-tight">
-              Still worth it
+              {ui.transparency.ctaTitle}
             </h4>
             <p className="text-muted font-medium">
-              Even with limits, members usually save massively vs retail Semrush.
+              {ui.transparency.ctaBody}
             </p>
           </div>
           <motion.a
@@ -87,7 +68,7 @@ export function TransparencySection() {
             whileTap={{ scale: 0.97 }}
             className="bg-primary text-white px-10 py-4 rounded-2xl font-black text-sm md:text-base shadow-[0_0_28px_rgba(255,115,72,0.35)] hover:scale-[1.02] transition-transform shrink-0 text-center"
           >
-            View plans
+            {ui.transparency.ctaButton}
           </motion.a>
         </motion.div>
       </div>
