@@ -98,6 +98,187 @@ content:
           - { name: jobTitle, type: string }
           - { name: bio, type: text }
           - { name: url, type: string }
+  - name: page-copy
+    label: Website text, sections and navigation
+    type: file
+    path: content/ui.json
+    format: json
+    fields:
+      - name: navigation
+        label: "Navigation"
+        type: object
+        fields:
+          - { name: home, label: "Home", type: string }
+          - { name: login, label: "Login", type: string }
+          - { name: getAccess, label: "Get Access", type: string }
+          - { name: mobileAccess, label: "Mobile Access", type: string }
+          - name: sections
+            label: "Sections"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: label, label: "Label", type: string }
+              - { name: href, label: "Href", type: string }
+      - name: footer
+        label: "Footer"
+        type: object
+        fields:
+          - { name: description, label: "Description", type: string }
+          - { name: operational, label: "Operational", type: string }
+          - { name: ssl, label: "Ssl", type: string }
+          - { name: privacy, label: "Privacy", type: string }
+          - { name: copyright, label: "Copyright", type: string }
+      - name: sharedAccess
+        label: "Shared Access"
+        type: object
+        fields:
+          - { name: titlePrefix, label: "Title Prefix", type: string }
+          - { name: titleBrand, label: "Title Brand", type: string }
+          - { name: headingSuffix, label: "Heading Suffix", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - { name: withoutPrefix, label: "Without Prefix", type: string }
+          - { name: withPrefix, label: "With Prefix", type: string }
+          - { name: accessLabel, label: "Access Label", type: string }
+          - { name: problems, label: "Problems", type: string, list: true }
+          - { name: solutions, label: "Solutions", type: string, list: true }
+      - name: comparison
+        label: "Comparison"
+        type: object
+        fields:
+          - { name: headingBrand, label: "Heading Brand", type: string }
+          - { name: headingSuffix, label: "Heading Suffix", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - { name: withoutLabel, label: "Without Label", type: string }
+          - { name: withLabel, label: "With Label", type: string }
+          - { name: officialTitle, label: "Official Title", type: string }
+          - { name: officialDescription, label: "Official Description", type: string }
+          - { name: groupTitle, label: "Group Title", type: string }
+          - { name: groupDescription, label: "Group Description", type: string }
+          - { name: versus, label: "Versus", type: string }
+          - name: rows
+            label: "Rows"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: label, label: "Label", type: string }
+              - { name: official, label: "Official", type: number }
+              - { name: group, label: "Group", type: number }
+              - { name: officialLabel, label: "Official Label", type: string }
+              - { name: groupLabel, label: "Group Label", type: string }
+      - name: toolbar
+        label: "Toolbar"
+        type: object
+        fields:
+          - { name: badge, label: "Badge", type: string }
+          - { name: headingAccent, label: "Heading Accent", type: string }
+          - { name: headingRest, label: "Heading Rest", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - name: features
+            label: "Features"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{title}" }
+            fields:
+              - { name: icon, label: "Icon", type: string }
+              - { name: title, label: "Title", type: string }
+              - { name: desc, label: "Desc", type: string }
+          - { name: button, label: "Button", type: string }
+          - { name: demoUrl, label: "Demo Url", type: string }
+          - { name: demoTitle, label: "Demo Title", type: string }
+          - name: demoStats
+            label: "Demo Stats"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: label, label: "Label", type: string }
+              - { name: value, label: "Value", type: string }
+          - { name: demoStatus, label: "Demo Status", type: string }
+      - name: transparency
+        label: "Transparency"
+        type: object
+        fields:
+          - { name: badge, label: "Badge", type: string }
+          - { name: headingBrand, label: "Heading Brand", type: string }
+          - { name: headingRest, label: "Heading Rest", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - name: limitations
+            label: "Limitations"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{title}" }
+            fields:
+              - { name: icon, label: "Icon", type: string }
+              - { name: title, label: "Title", type: string }
+              - { name: desc, label: "Desc", type: string }
+          - { name: ctaTitle, label: "Cta Title", type: string }
+          - { name: ctaBody, label: "Cta Body", type: string }
+          - { name: ctaButton, label: "Cta Button", type: string }
+      - name: pricing
+        label: "Pricing"
+        type: object
+        fields:
+          - { name: brandHeading, label: "Brand Heading", type: string }
+          - { name: titleRest, label: "Title Rest", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - { name: couponLabel, label: "Coupon Label", type: string }
+          - { name: couponDescription, label: "Coupon Description", type: string }
+          - { name: comparisonButton, label: "Comparison Button", type: string }
+          - { name: guarantee, label: "Guarantee", type: string }
+          - { name: monthlyTitle, label: "Monthly Title", type: string }
+          - { name: monthlySubtitle, label: "Monthly Subtitle", type: string }
+          - { name: yearlyTitle, label: "Yearly Title", type: string }
+          - { name: yearlySubtitle, label: "Yearly Subtitle", type: string }
+          - { name: recommendedPlanId, label: "Recommended Plan Id", type: string }
+      - name: premiumTools
+        label: "Premium Tools"
+        type: object
+        fields:
+          - { name: eyebrow, label: "Eyebrow", type: string }
+          - { name: title, label: "Title", type: string }
+          - { name: description, label: "Description", type: string }
+          - { name: emptyMessage, label: "Empty Message", type: string }
+      - name: reviews
+        label: "Reviews"
+        type: object
+        fields:
+          - { name: heading, label: "Heading", type: string }
+          - { name: intro, label: "Intro", type: string }
+          - { name: button, label: "Button", type: string }
+      - name: faq
+        label: "Faq"
+        type: object
+        fields:
+          - { name: heading, label: "Heading", type: string }
+      - name: contact
+        label: "Contact"
+        type: object
+        fields:
+          - { name: firstName, label: "First Name", type: string }
+          - { name: lastName, label: "Last Name", type: string }
+          - { name: email, label: "Email", type: string }
+          - { name: message, label: "Message", type: string }
+      - name: chat
+        label: "Chat"
+        type: object
+        fields:
+          - { name: title, label: "Title", type: string }
+          - { name: responseHint, label: "Response Hint", type: string }
+      - name: article
+        label: "Article"
+        type: object
+        fields:
+          - { name: siteName, label: "Site Name", type: string }
+          - name: toc
+            label: "Toc"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: id, label: "Id", type: string }
+              - { name: label, label: "Label", type: string }
   - name: articles
     label: SEO pages
     type: collection
