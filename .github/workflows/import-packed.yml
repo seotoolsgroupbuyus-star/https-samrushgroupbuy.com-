@@ -2,7 +2,7 @@ name: Unpack complete Semrush migration source
 on:
   push:
     paths:
-      - '.migration/source.tar.br.b64'
+      - '.migration/**'
 permissions:
   contents: write
 jobs:
@@ -30,6 +30,8 @@ jobs:
           test -f content/site.json
           test -f .pages.yml
           test -f scripts/verify.mjs
+          # Keep existing workflow unchanged: the default token cannot write workflow files.
+          git restore .github/workflows/verify.yml
           test "$(find content/articles -maxdepth 1 -name '*.json' | wc -l)" -eq 35
       - name: Commit actual 138 source files to main
         run: |
