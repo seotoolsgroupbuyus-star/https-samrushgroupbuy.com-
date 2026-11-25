@@ -22,3 +22,6 @@ Cloudflare Worker static assets name in `wrangler.jsonc` is currently `semrush-a
 
 ## CMS
 Connect GitHub repository to Pages CMS; config is `.pages.yml`.
+
+## Repository import status
+The complete 138-file migration package was imported to `main` from the user-provided ZIP. The source files are committed individually, not stored as a ZIP. Run CI before a production cutover.
