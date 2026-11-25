@@ -233,9 +233,6 @@ content:
           - { name: brandHeading, label: "Brand Heading", type: string }
           - { name: titleRest, label: "Title Rest", type: string }
           - { name: intro, label: "Intro", type: string }
-          - { name: couponLabel, label: "Coupon Label", type: string }
-          - { name: couponDescription, label: "Coupon Description", type: string }
-          - { name: comparisonButton, label: "Comparison Button", type: string }
           - { name: guarantee, label: "Guarantee", type: string }
           - { name: monthlyTitle, label: "Monthly Title", type: string }
           - { name: monthlySubtitle, label: "Monthly Subtitle", type: string }
@@ -292,14 +289,6 @@ content:
         type: object
         fields:
           - { name: heading, label: "Heading", type: string }
-      - name: contact
-        label: "Contact"
-        type: object
-        fields:
-          - { name: firstName, label: "First Name", type: string }
-          - { name: lastName, label: "Last Name", type: string }
-          - { name: email, label: "Email", type: string }
-          - { name: message, label: "Message", type: string }
       - name: chat
         label: "Chat"
         type: object
