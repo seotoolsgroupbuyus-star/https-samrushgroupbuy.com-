@@ -1,4 +1,5 @@
 import ui from '../../../content/ui.json';
+import {site} from '../config/site';
 import { useState, useEffect } from "react";
 import Link from "../shims/link";
 import { usePathname } from "../shims/navigation";
@@ -53,9 +54,9 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <button className="text-[11px] font-bold uppercase tracking-widest text-white hover:text-primary transition-colors px-4">
+              <Link href={site.paymentBaseUrl} className="text-[11px] font-bold uppercase tracking-widest text-white hover:text-primary transition-colors px-4">
                 {ui.navigation.login}
-              </button>
+              </Link>
               <Link
                 href="/#pricing"
                 className="bg-primary text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,115,72,0.28)] flex items-center gap-2"
@@ -105,14 +106,14 @@ export function Navbar() {
               </div>
 
               <div className="pt-8 border-t border-white/5 space-y-4">
-                <button className="w-full py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/10 rounded-xl">
+                <Link href={site.paymentBaseUrl} className="block text-center w-full py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/10 rounded-xl">
                   {ui.navigation.login}
-                </button>
+                </Link>
                 <Link
                   href="/#pricing"
                   className="block w-full bg-primary text-center text-white py-4 text-sm font-black uppercase tracking-widest rounded-xl shadow-[0_0_20px_rgba(255,115,72,0.28)]"
                 >
-                  {ui.navigation.mobileAccess}ess Now
+                  {ui.navigation.mobileAccess}
                 </Link>
               </div>
             </div>
