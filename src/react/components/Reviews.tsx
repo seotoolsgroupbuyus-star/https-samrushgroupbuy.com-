@@ -1,5 +1,4 @@
 import ui from '../../../content/ui.json';
-import {site} from '../config/site';
 import {site} from "../config/site";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
