@@ -4,12 +4,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, X, Search } from "lucide-react";
 
-function ToolLogo({ name }: { name: string }) {
+function ToolLogo({ name, logo }: { name: string; logo?: string }) {
   const common = "w-12 h-12 md:w-14 md:h-14";
   const imgCommon = `${common} object-contain`;
 
-  const imgSrc =
-    name === "Semrush"
+  const imgSrc = logo ||
+    (name === "Semrush"
       ? "/logos/semrush.svg"
       : name === "Ahrefs"
         ? "/logos/ahrefs.png"
@@ -21,7 +21,7 @@ function ToolLogo({ name }: { name: string }) {
               ? "/logos/moz.svg"
               : name === "Envato"
                 ? "/logos/envato.svg"
-                : null;
+                : null);
 
   if (imgSrc) {
     return <img src={imgSrc} alt={`${name} logo`} className={imgCommon} loading="lazy" decoding="async" />;
@@ -100,7 +100,7 @@ export function PremiumTools() {
               className={`p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] flex flex-col items-center text-center border transition-shadow hover:shadow-[0_0_40px_-12px_rgba(255,115,72,0.2)] ${tool.color}`}
             >
               <div className="w-16 h-16 md:w-20 md:h-20 bg-white/[0.06] rounded-3xl flex items-center justify-center mb-5 md:mb-6 border border-white/10">
-                <ToolLogo name={tool.name} />
+                <ToolLogo name={tool.name} logo={tool.logo} />
               </div>
               <h4 className="text-lg md:text-2xl font-black text-white mb-1">{tool.name}</h4>
               <p className="text-xs md:text-sm font-bold text-muted uppercase tracking-widest">{ui.premiumTools.title}</p>
