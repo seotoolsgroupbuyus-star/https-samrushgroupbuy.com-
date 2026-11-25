@@ -1,4 +1,5 @@
 import ui from '../../../content/ui.json';
+import {site} from '../config/site';
 import { motion } from "motion/react";
 import { Chrome, Layout, Zap, Globe, Shield, ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "../lib/utils";
@@ -56,6 +57,7 @@ export function ToolbarSection() {
 
             <button
               type="button"
+              onClick={() => window.location.assign(site.paymentBaseUrl)}
               className="bg-primary text-white px-10 py-5 rounded-2xl text-xs font-black uppercase tracking-widest shadow-[0_0_28px_rgba(255,115,72,0.32)] hover:scale-[1.02] active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
             >
               {ui.toolbar.button} <ArrowRight className="w-4 h-4" />
