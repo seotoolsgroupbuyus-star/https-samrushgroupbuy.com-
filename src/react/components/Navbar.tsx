@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import { useState, useEffect } from "react";
 import Link from "../shims/link";
 import { usePathname } from "../shims/navigation";
@@ -6,13 +7,7 @@ import { Menu, X, Zap } from "lucide-react";
 import { cn } from "../lib/utils";
 import { Logo } from "./Logo";
 
-const HOME_SECTIONS: { label: string; href: string }[] = [
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Tools", href: "/#tools" },
-  { label: "Comparison", href: "/#comparison" },
-  { label: "Reviews", href: "/#reviews" },
-  { label: "FAQ", href: "/#faq" },
-];
+const HOME_SECTIONS: {label:string;href:string}[] = ui.navigation.sections;
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +41,7 @@ export function Navbar() {
                     : "text-slate-300 hover:text-primary"
                 )}
             >
-              Home
+              {ui.navigation.home}
             </Link>
             {HOME_SECTIONS.map((item) => (
               <Link
@@ -59,14 +54,14 @@ export function Navbar() {
             ))}
             <div className="flex items-center gap-4">
               <button className="text-[11px] font-bold uppercase tracking-widest text-white hover:text-primary transition-colors px-4">
-                Login
+                {ui.navigation.login}
               </button>
               <Link
                 href="/#pricing"
                 className="bg-primary text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,115,72,0.28)] flex items-center gap-2"
               >
                 <Zap className="w-3 h-3 fill-current" />
-                Get Access
+                {ui.navigation.getAccess}
               </Link>
             </div>
           </div>
@@ -95,7 +90,7 @@ export function Navbar() {
                   pathname === "/" ? "text-primary" : "text-white"
                 )}
               >
-                Home
+                {ui.navigation.home}
               </Link>
               <div className="space-y-2">
                 {HOME_SECTIONS.map((item) => (
@@ -111,13 +106,13 @@ export function Navbar() {
 
               <div className="pt-8 border-t border-white/5 space-y-4">
                 <button className="w-full py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/10 rounded-xl">
-                  Login
+                  {ui.navigation.login}
                 </button>
                 <Link
                   href="/#pricing"
                   className="block w-full bg-primary text-center text-white py-4 text-sm font-black uppercase tracking-widest rounded-xl shadow-[0_0_20px_rgba(255,115,72,0.28)]"
                 >
-                  Get VIP Access Now
+                  {ui.navigation.mobileAccess}ess Now
                 </Link>
               </div>
             </div>
