@@ -1,4 +1,5 @@
 import ui from '../../../content/ui.json';
+import {site} from '../config/site';
 import {site} from "../config/site";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
@@ -23,14 +24,16 @@ export function Reviews() {
               {ui.reviews.intro}
             </p>
           </motion.div>
-          <motion.button
-            type="button"
+          <motion.a
+            href={`https://wa.me/${site.supportWhatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="glass hover:bg-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/10"
           >
             {ui.reviews.button}
-          </motion.button>
+          </motion.a>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
