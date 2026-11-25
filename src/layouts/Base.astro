@@ -2,8 +2,48 @@
 import '../styles/global.css';
 import '../styles/cms-article.css';
 import site from '../../content/site.json';
-const {title=site.name,description=site.description,pathname='/',type='website'}=Astro.props;
-const canonical=site.siteUrl.replace(/\/$/,'')+(pathname==='/'?'/':pathname);
-const schema={'@context':'https://schema.org','@type':'WebSite',name:site.name,url:site.siteUrl};
+
+const {
+  title = site.homeMetaTitle,
+  description = site.homeMetaDescription,
+  pathname = '/',
+  type = 'website',
+  socialTitle,
+  keywords = [],
+} = Astro.props;
+// Original Next.js root metadata uses title.template = "%s | SemrushGroupBuy".
+// Page metaTitle fields store the exact unsuffixed values from the original ZIP.
+const htmlTitle = title.endsWith(' | ' + site.name) ? title : title + ' | ' + site.name;
+const ogTitle = socialTitle || title;
+const canonical = site.siteUrl.replace(/\/$/, '') + (pathname === '/' ? '/' : pathname);
+const ogImage = /^https?:\/\//.test(site.ogImage) ? site.ogImage : site.siteUrl.replace(/\/$/, '') + '/' + site.ogImage.replace(/^\//, '');
+const schema = {'@context':'https://schema.org','@type':'WebSite',name:site.name,url:site.siteUrl};
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#111820"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/><meta name="google-site-verification" content={site.googleSiteVerification}/><meta property="og:type" content={type}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={site.siteUrl+site.ogImage}/><meta name="twitter:card" content="summary_large_image"/><link rel="icon" href={site.favicon} type="image/svg+xml"/><script type="application/ld+json" set:html={JSON.stringify(schema)}/></head><body class="bg-background text-text min-h-screen"><slot/></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111820" />
+  <title>{htmlTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={[...site.seoKeywords, ...keywords].join(', ')} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index,follow,max-video-preview:-1,max-image-preview:large,max-snippet:-1" />
+  <meta name="google-site-verification" content={site.googleSiteVerification} />
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <link rel="icon" href={site.favicon} type="image/svg+xml" />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body class="bg-background text-text min-h-screen"><slot /></body>
+</html>
