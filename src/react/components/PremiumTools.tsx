@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import {site} from "../config/site";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -80,7 +81,7 @@ export function PremiumTools() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 md:mb-5 tracking-tight leading-snug max-w-xl mx-auto">
-            25+ tools · <span className="text-primary">SEO stack</span>
+            25+ tools · <span className="text-primary">{ui.premiumTools.eyebrow}</span>
           </h2>
           <p className="text-muted font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             One membership: pro-grade SEO access plus the extra SaaS stack power users expect.
@@ -102,7 +103,7 @@ export function PremiumTools() {
                 <ToolLogo name={tool.name} />
               </div>
               <h4 className="text-lg md:text-2xl font-black text-white mb-1">{tool.name}</h4>
-              <p className="text-xs md:text-sm font-bold text-muted uppercase tracking-widest">Premium access</p>
+              <p className="text-xs md:text-sm font-bold text-muted uppercase tracking-widest">{ui.premiumTools.title}</p>
             </motion.div>
           ))}
         </div>
@@ -151,7 +152,7 @@ export function PremiumTools() {
                   <h3 id="tools-modal-title" className="text-lg md:text-xl font-black text-white leading-tight">
                     All tools ({ALL_TOOLS.length})
                   </h3>
-                  <p className="text-sm text-muted font-medium mt-1">Typical bundles. Names may vary by stock.</p>
+                  <p className="text-sm text-muted font-medium mt-1">{ui.premiumTools.description}</p>
                 </div>
                 <button
                   type="button"
@@ -186,7 +187,7 @@ export function PremiumTools() {
                   ))}
                 </div>
                 {filtered.length === 0 && (
-                  <p className="text-sm text-muted text-center py-8">No tools match your search.</p>
+                  <p className="text-sm text-muted text-center py-8">{ui.premiumTools.emptyMessage}</p>
                 )}
               </div>
               <div className="p-4 bg-background/80 border-t border-white/10 shrink-0">
