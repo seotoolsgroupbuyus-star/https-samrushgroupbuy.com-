@@ -14,6 +14,17 @@ async function inspect(url,label,viewport){
   await page.evaluate(()=>document.fonts.ready);
   await page.addStyleTag({content:'*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important;scroll-behavior:auto!important}'});
   await page.waitForTimeout(900);
+  // Trigger every whileInView/reveal block before capturing full-page screenshots.
+  // Otherwise Playwright's full-page capture sees offscreen opacity:0 placeholders.
+  await page.evaluate(async ()=>{
+   const sections=Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section'));
+   for(const section of sections){
+    section.scrollIntoView({block:'center',behavior:'instant'});
+    await new Promise(resolve=>setTimeout(resolve,230));
+   }
+   window.scrollTo({top:0,behavior:'instant'});
+  });
+  await page.waitForTimeout(1000);
   const metrics=await page.evaluate(()=>{
    const details=el=>{
     const rect=el.getBoundingClientRect(),style=getComputedStyle(el);
