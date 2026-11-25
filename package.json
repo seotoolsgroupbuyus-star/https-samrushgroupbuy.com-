@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "verify:cms": "node scripts/verify-cms.mjs"
   },
   "dependencies": {
     "astro": "^5.16.0",
@@ -20,5 +21,8 @@
     "lucide-react": "^0.546.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "yaml": "^2.8.1"
   }
 }
