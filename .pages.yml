@@ -264,6 +264,7 @@ content:
           - { name: sslSecure, label: "Ssl Secure", type: string }
           - { name: instantSetup, label: "Instant Setup", type: string }
           - { name: readLimits, label: "Read Limits", type: string }
+          - { name: tooltipHeading, label: "Tooltip Heading", type: string }
       - name: premiumTools
         label: "Premium Tools"
         type: object
@@ -331,6 +332,55 @@ content:
           - { name: writtenBy, label: "Written By", type: string }
           - { name: checkoutTrust, label: "Checkout Trust", type: string }
           - { name: ctaQuestion, label: "Cta Question", type: string }
+          - { name: startHere, label: "Start Here", type: string }
+          - { name: introduction, label: "Introduction", type: string }
+          - { name: overviewText, label: "Overview Text", type: string }
+          - { name: whatYouGet, label: "What You Get", type: string }
+          - { name: benefitsList, label: "Benefits List", type: string, list: true }
+          - { name: mainPoints, label: "Main Points", type: string }
+          - { name: mainPointsSuffix, label: "Main Points Suffix", type: string }
+          - { name: checklistLabel, label: "Checklist Label", type: string }
+          - { name: preSubscribeList, label: "Pre Subscribe List", type: string, list: true }
+          - { name: takeaways, label: "Takeaways", type: string }
+          - { name: summaryText, label: "Summary Text", type: string }
+          - { name: quickChecklist, label: "Quick Checklist", type: string }
+          - { name: summaryList, label: "Summary List", type: string, list: true }
+          - { name: quickReference, label: "Quick Reference", type: string }
+          - { name: quickDescription, label: "Quick Description", type: string }
+          - { name: comparisonColumns, label: "Comparison Columns", type: string, list: true }
+          - name: comparisonRows
+            label: "Comparison Rows"
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{topic}" }
+            fields:
+              - { name: topic, label: "Topic", type: string }
+              - { name: groupBuy, label: "Group Buy", type: string }
+              - { name: retail, label: "Retail", type: string }
+          - { name: ctaButton, label: "Cta Button", type: string }
+          - { name: sidebarTitle, label: "Sidebar Title", type: string }
+          - { name: sidebarEyebrow, label: "Sidebar Eyebrow", type: string }
+          - { name: sidebarDescription, label: "Sidebar Description", type: string }
+          - { name: sidebarButton, label: "Sidebar Button", type: string }
+          - { name: partOf, label: "Part Of", type: string }
+          - { name: preContentPrefix, label: "Pre Content Prefix", type: string }
+          - { name: authorProfile, label: "Author Profile", type: string }
+          - { name: plansLabel, label: "Plans Label", type: string }
+          - { name: resources, label: "Resources", type: string }
+          - { name: exploreGuide, label: "Explore Guide", type: string }
+      - name: logo
+        label: "Logo"
+        type: object
+        fields:
+          - { name: primary, label: "Primary", type: string }
+          - { name: secondary, label: "Secondary", type: string }
+          - { name: tagline, label: "Tagline", type: string }
+      - name: hero
+        label: "Hero"
+        type: object
+        fields:
+          - { name: demoHeading, label: "Demo Heading", type: string }
+          - { name: demoTag, label: "Demo Tag", type: string }
   - name: articles
     label: SEO pages
     type: collection
