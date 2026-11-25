@@ -1,4 +1,4 @@
-name: Compare live Semrush and migrated Astro design
+name: Compare live Semrush and real Cloudflare Worker design
 on:
   workflow_dispatch:
   push:
@@ -27,7 +27,9 @@ jobs:
           done
           cat /tmp/semrush-preview.log
           exit 1
-      - name: Compare desktop and mobile layout against original live website
+      - name: Compare actual Cloudflare Worker to live Semrush website
+        env:
+          MIGRATED_URL: https://https-samrushgroupbuy-com.pandastudioo70.workers.dev/
         run: node scripts/compare-live-layout.mjs
       - uses: actions/upload-artifact@v4
         if: always()
