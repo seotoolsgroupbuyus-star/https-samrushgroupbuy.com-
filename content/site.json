@@ -473,7 +473,9 @@
       "Backlink Analytics",
       "Position Tracking",
       "Domain Overview"
-    ]
+    ],
+    "primaryUrl": "/#pricing",
+    "secondaryUrl": "/semrush-group-buy-guide"
   },
   "faqIntro": "Billing, limits, toolkit install, and data: everything you need in one place.",
   "supportWhatsappNumber": "447845432224",
@@ -515,5 +517,6 @@
     "group-buy-vs-semrush-starter",
     "is-semrush-starter-better",
     "best-option-for-seo-tools"
-  ]
+  ],
+  "brandLogo": ""
 }
