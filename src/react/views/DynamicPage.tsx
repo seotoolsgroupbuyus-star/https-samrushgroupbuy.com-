@@ -136,7 +136,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                 <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <p className="text-slate-600 text-sm">{ui.article.ctaQuestion}</p>
                   <Link
-                    href="/#pricing"
+                    href={ui.article.ctaUrl}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] text-white px-8 py-3.5 text-xs font-black uppercase tracking-widest shadow-md shadow-orange-200/60 hover:opacity-95 transition-opacity shrink-0"
                   >
                     {ui.article.ctaButton} <ArrowRight className="w-4 h-4" />
@@ -182,7 +182,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                     >
                       {ui.article.authorProfile}
                     </a>
-                    <Link href="/#pricing" className="text-[var(--color-brand-navy)] hover:text-[var(--color-primary)] transition-colors">
+                    <Link href={ui.article.ctaUrl} className="text-[var(--color-brand-navy)] hover:text-[var(--color-primary)] transition-colors">
                       {ui.article.plansLabel}
                     </Link>
                   </div>
@@ -287,7 +287,7 @@ export function DynamicPage({ slug }: { slug: string }) {
                 </p>
                 <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6">{ui.article.sidebarDescription}</p>
                 <Link
-                  href="/#pricing"
+                  href={ui.article.sidebarUrl}
                   className="flex w-full items-center justify-center rounded-xl bg-[var(--color-primary)] text-white py-3.5 text-xs font-black uppercase tracking-widest shadow-lg shadow-orange-200/50 hover:opacity-95 transition-opacity mb-4"
                 >{ui.article.sidebarButton}</Link>
                 <p className="text-center text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center justify-center gap-1.5 flex-wrap">
