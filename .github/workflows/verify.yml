@@ -21,3 +21,5 @@ jobs:
       - run: npm run verify
       - run: node scripts/verify-design-parity.mjs
       - run: npm run build
+      - name: Verify Wrangler builds assets before deploying (no Cloudflare credentials needed)
+        run: npx wrangler@4.168.0 deploy --dry-run
