@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -46,8 +47,8 @@ export function ChatWidget({ whatsappPhoneE164 = "447845432224" }: ChatWidgetPro
         >
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-surface/70">
             <div>
-              <p className="text-xs font-black uppercase tracking-widest text-white">Support</p>
-              <p className="text-[11px] font-bold text-muted">Typically replies fast</p>
+              <p className="text-xs font-black uppercase tracking-widest text-white">{ui.chat.title}</p>
+              <p className="text-[11px] font-bold text-muted">{ui.chat.responseHint}</p>
             </div>
             <button
               type="button"
@@ -67,11 +68,11 @@ export function ChatWidget({ whatsappPhoneE164 = "447845432224" }: ChatWidgetPro
               className="w-full bg-primary text-background px-4 py-3 rounded-xl font-black text-[11px] uppercase tracking-widest hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(255,115,72,0.25)]"
             >
               <Phone className="w-4 h-4" />
-              WhatsApp chat
+              {ui.chat.whatsappLabel}
             </a>
 
             <p className="text-[10px] text-white/35 font-bold uppercase tracking-wider text-center">
-              WhatsApp: +44 7845 432224
+              {ui.chat.whatsappNumberDisplay}
             </p>
           </div>
         </div>
