@@ -1,0 +1,22 @@
+name: Verify Semrush Astro migration
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check full source upload
+        run: |
+          test -f src/pages/index.astro
+          test -f src/react/SiteApp.tsx
+          test -f .pages.yml
+          test -f scripts/verify.mjs
+      - run: npm install
+      - run: npm run verify
+      - run: npm run build
