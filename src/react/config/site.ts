@@ -1,10 +1,8 @@
 import site from '../../../content/site.json';
-import { PAGES as originalPages } from '../../../original-source/src/config/site';
-// Importing JSON via glob sorts filenames; the original Next.js implementation
-// registered pages in editorial cluster order. Preserve that order for related
-// article cards while keeping every article's text in its CMS JSON file.
+// Editors control the ordering of supporting/related pages in Pages CMS.
+// Keep the original editorial sequence as the initial content/site.json value.
 const modules=import.meta.glob('../../../content/articles/*.json',{eager:true,import:'default'});
-const originalOrder=new Map(Object.keys(originalPages).map((slug,index)=>[slug,index]));
+const originalOrder=new Map(site.articleOrder.map((slug,index)=>[slug,index]));
 const records=(Object.values(modules) as any[]).sort((a,b)=>
   (originalOrder.get(a.slug)??Number.MAX_SAFE_INTEGER)-(originalOrder.get(b.slug)??Number.MAX_SAFE_INTEGER)
   || String(a.slug).localeCompare(String(b.slug))
