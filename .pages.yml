@@ -392,6 +392,17 @@ content:
       - { name: status, type: select, options: { values: [published, draft] } }
       - { name: description, type: text }
       - { name: content, label: Article body, type: rich-text, options: { format: html, media: uploads, switcher: false } }
+      - { name: customFullBody, label: Optional complete article replacement, type: rich-text, options: { format: html, media: uploads, switcher: false } }
+      - { name: authorName, label: Optional author override, type: string }
+      - { name: heroSentenceCase, label: Use sentence-case heading, type: boolean }
+      - name: toc
+        label: Optional table of contents
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{label}" }
+        fields:
+          - { name: id, label: Section anchor ID, type: string }
+          - { name: label, label: Section label, type: string }
       - { name: cluster, type: string }
       - { name: isPillar, type: boolean }
       - { name: parentSlug, type: string }
