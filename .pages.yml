@@ -7,6 +7,11 @@ media:
     input: public/images
     output: /images
     categories: [image]
+  - name: logos
+    label: Tool and brand logos
+    input: public/logos
+    output: /logos
+    categories: [image]
 content:
   - name: website
     label: Homepage, Pricing, FAQs and Reviews
@@ -17,6 +22,8 @@ content:
       - { name: name, label: Website name, type: string }
       - { name: siteUrl, label: Website URL, type: string }
       - { name: paymentBaseUrl, label: Payment website, type: string }
+      - { name: ogImage, label: Social sharing image, type: image, options: { media: uploads } }
+      - { name: favicon, label: Website favicon, type: image, options: { media: uploads } }
       - { name: supportWhatsappNumber, label: WhatsApp support number, type: string }
       - { name: description, label: Site description, type: text }
       - { name: googleSiteVerification, label: Google verification, type: string }
@@ -89,6 +96,7 @@ content:
         fields:
           - { name: name, type: string }
           - { name: color, type: string }
+          - { name: logo, label: Tool logo, type: image, options: { media: logos } }
       - { name: allTools, label: All tools, type: string, list: true }
       - name: authorProfiles
         label: Authors
