@@ -43,7 +43,7 @@ export function ComparisonVisual() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-black text-white/15 select-none py-4 md:py-0"
           >
-            VS
+            {ui.comparison.versus}
           </motion.div>
           <motion.div
             className="flex-1 text-center md:text-right"
@@ -53,7 +53,7 @@ export function ComparisonVisual() {
           >
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2">{ui.comparison.withLabel}</p>
             <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-primary mb-3 tracking-tight">
-              Shared access
+              {ui.comparison.groupTitle}
             </h3>
             <p className="text-muted font-medium max-w-md mx-auto md:ml-auto md:mr-0 leading-relaxed">
               {ui.comparison.groupDescription}
