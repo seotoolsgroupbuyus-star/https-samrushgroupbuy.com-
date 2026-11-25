@@ -5,6 +5,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
 import { ChatWidget } from "./ChatWidget";
+import {site} from "../config/site";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { usePathname } from "../shims/navigation";
 
@@ -45,7 +46,7 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <Footer />
       
-      <ChatWidget whatsappPhoneE164="447845432224" />
+      <ChatWidget whatsappPhoneE164={site.supportWhatsappNumber} />
     </div>
   );
 }
