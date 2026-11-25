@@ -2,15 +2,20 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 
 const original='https://samrushgroupbuy.com/';
-const migrated='http://127.0.0.1:4321/';
+const migrated=(process.env.MIGRATED_URL || 'http://127.0.0.1:4321/').replace(/\/?$/, '/');
 fs.mkdirSync('reports/live-design',{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const results=[];
 
 async function inspect(url,label,viewport){
  const page=await browser.newPage({viewport,deviceScaleFactor:1,reducedMotion:'reduce'});
+ const assetFailures=[];
+ page.on('response',response=>{if(response.status()>=400 && /\.(?:css|js|svg|woff2?|png|jpg|webp)(?:\?|$)/i.test(response.url()))assetFailures.push(response.status()+' '+response.url())});
+ page.on('requestfailed',request=>assetFailures.push('FAILED '+request.url()+' '+request.failure()?.errorText));
  try {
-  await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
+  const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
+  if(!response || response.status()>=400)throw new Error('Page HTTP '+response?.status()+' at '+url);
+  await page.waitForLoadState('networkidle',{timeout:15000}).catch(()=>{});
   await page.evaluate(()=>document.fonts.ready);
   await page.addStyleTag({content:'*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important;scroll-behavior:auto!important}'});
   await page.waitForTimeout(900);
@@ -33,6 +38,8 @@ async function inspect(url,label,viewport){
    return {title:document.title,body:details(document.body),nav:document.querySelector('nav')?details(document.querySelector('nav')):null,footer:document.querySelector('footer')?details(document.querySelector('footer')):null,sections:Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).map(details),relatedArticleLinks:Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).at(-1)?.querySelectorAll('a') ? Array.from(Array.from(document.querySelectorAll('main section')).filter(el=>!el.parentElement?.closest('section')).at(-1).querySelectorAll('a')).map(a=>a.pathname) : []};
   });
   await page.screenshot({path:'reports/live-design/'+label+'.png',fullPage:true,animations:'disabled',timeout:60000});
+  metrics.assetFailures=assetFailures;
+  metrics.stylesheets=await page.evaluate(()=>Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(x=>x.href));
   return metrics;
  } finally {await page.close()}
 }
@@ -43,6 +50,8 @@ for(const [device,viewport] of values) for(const [pageName,pathname] of pages){
  const live=await inspect(original+pathname,'original-'+pageName+'-'+device,viewport);
  const local=await inspect(migrated+pathname,'astro-'+pageName+'-'+device,viewport);
  const differences=[];
+ if(local.assetFailures.length)differences.push(...local.assetFailures.map(s=>'Migrated asset: '+s));
+ if(!local.stylesheets.length)differences.push('Migrated page has no linked CSS stylesheet');
  const compare=(label,a,b)=>{
   if(!a||!b){differences.push(label+': missing element');return}
   for(const field of ['width','height','top']){
