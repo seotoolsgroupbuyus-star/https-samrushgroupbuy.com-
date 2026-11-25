@@ -11,6 +11,10 @@ const sources=new Map(config.content.map(entry=>[entry.path,entry]));
 function audit(value,fields,scope) {
  const known=new Map((fields||[]).map(f=>[f.name,f]));
  if(value&&typeof value==='object'&&!Array.isArray(value)) {
+  // The interface editor should never show empty fields with no matching data.
+  if(scope.startsWith('content/ui.json'))
+   for(const name of known.keys()) if(!Object.hasOwn(value,name))
+    errors.push(scope+'.'+name+' appears in CMS but is unused in the interface JSON');
   for(const [key,child] of Object.entries(value)) {
    const field=known.get(key);
    if(!field) {errors.push(scope+'.'+key+' has no Pages CMS field');continue;}
