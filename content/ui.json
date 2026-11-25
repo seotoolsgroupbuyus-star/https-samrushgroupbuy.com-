@@ -1,0 +1,258 @@
+{
+  "navigation": {
+    "home": "Home",
+    "login": "Login",
+    "getAccess": "Get Access",
+    "mobileAccess": "Get VIP Access",
+    "sections": [
+      {
+        "label": "Pricing",
+        "href": "/#pricing"
+      },
+      {
+        "label": "Tools",
+        "href": "/#tools"
+      },
+      {
+        "label": "Comparison",
+        "href": "/#comparison"
+      },
+      {
+        "label": "Reviews",
+        "href": "/#reviews"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#faq"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Reliable shared access for SEO teams and freelancers.",
+    "operational": "Operational",
+    "ssl": "SSL",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 SemrushGroupBuy"
+  },
+  "sharedAccess": {
+    "titlePrefix": "Why",
+    "titleBrand": "Semrush Group Buy",
+    "headingSuffix": "?",
+    "intro": "Enterprise pricing wasn't built for freelancers. Get the same toolkit with a lower monthly spend.",
+    "withoutPrefix": "Without",
+    "withPrefix": "With",
+    "accessLabel": "shared access",
+    "problems": [
+      "Expensive tools costing $99+/month each",
+      "Not affordable for beginners or freelancers",
+      "Multiple subscriptions to manage",
+      "Limited features on free versions"
+    ],
+    "solutions": [
+      "Get same premium tools at 90% lower price",
+      "Instant shared access via our secure dashboard",
+      "One single subscription for all tools",
+      "Full premium features unlocked"
+    ]
+  },
+  "comparison": {
+    "headingBrand": "Semrush Group Buy",
+    "headingSuffix": "vs direct",
+    "intro": "Side-by-side reality check: official seats vs shared access most solo SEOs actually need.",
+    "withoutLabel": "Without shared access",
+    "withLabel": "With shared access",
+    "officialTitle": "Retail Semrush",
+    "officialDescription": "List price, per-seat rules, and contracts before you even open Keyword Magic.",
+    "groupTitle": "Shared access",
+    "groupDescription": "Dashboard and toolkit workflows you recognize, routed through a stable shared stack.",
+    "versus": "VS",
+    "rows": [
+      {
+        "label": "Monthly cost",
+        "official": 28,
+        "group": 96,
+        "officialLabel": "28%",
+        "groupLabel": "96%"
+      },
+      {
+        "label": "Accessibility",
+        "official": 35,
+        "group": 94,
+        "officialLabel": "35%",
+        "groupLabel": "94%"
+      },
+      {
+        "label": "Value for solo SEOs",
+        "official": 22,
+        "group": 98,
+        "officialLabel": "22%",
+        "groupLabel": "98%"
+      },
+      {
+        "label": "Multi-tool bundle",
+        "official": 30,
+        "group": 95,
+        "officialLabel": "30%",
+        "groupLabel": "95%"
+      },
+      {
+        "label": "Support responsiveness",
+        "official": 75,
+        "group": 88,
+        "officialLabel": "75%",
+        "groupLabel": "88%"
+      },
+      {
+        "label": "Uptime / stability",
+        "official": 82,
+        "group": 99,
+        "officialLabel": "82%",
+        "groupLabel": "99%"
+      }
+    ]
+  },
+  "toolbar": {
+    "badge": "Directly in Browser",
+    "headingAccent": "Browser",
+    "headingRest": "SEO toolkit",
+    "intro": "Your access isn't only the dashboard. The extension brings authority, backlinks, and keyword signals wherever you browse.",
+    "features": [
+      {
+        "icon": "Zap",
+        "title": "Instant Metrics",
+        "desc": "Authority Score, traffic, and backlinks on SERPs."
+      },
+      {
+        "icon": "Globe",
+        "title": "Keyword Data",
+        "desc": "Search volume and difficulty in real time."
+      },
+      {
+        "icon": "Layout",
+        "title": "On-Page SEO",
+        "desc": "Headers, meta tags, and more at a glance."
+      },
+      {
+        "icon": "Shield",
+        "title": "Safe Access",
+        "desc": "Integrated with our secure dashboard."
+      }
+    ],
+    "button": "Get Extension Access",
+    "demoUrl": "google.com/search?q=semrush+group+buy",
+    "demoTitle": "Semrush Toolkit",
+    "demoStats": [
+      {
+        "label": "Authority Score",
+        "value": "85"
+      },
+      {
+        "label": "Backlinks",
+        "value": "1.5M"
+      },
+      {
+        "label": "Keywords",
+        "value": "45.2K"
+      },
+      {
+        "label": "Traffic",
+        "value": "1.2M"
+      }
+    ],
+    "demoStatus": "Live via group buy"
+  },
+  "transparency": {
+    "badge": "Transparency first",
+    "headingBrand": "Semrush Group Buy",
+    "headingRest": "limits",
+    "intro": "We spell out the trade-offs so your access stays stable: fair use, quotas, and what isn't included.",
+    "limitations": [
+      {
+        "icon": "Users",
+        "title": "Shared seats",
+        "desc": "Seats are pooled to keep pricing low. Your work stays isolated; group-wide fair-use caps keep everyone online."
+      },
+      {
+        "icon": "Activity",
+        "title": "Daily quotas",
+        "desc": "Heavy exports and audits are limited per day so one member can’t burn the whole group’s credits. Resets every 24h."
+      },
+      {
+        "icon": "Lock",
+        "title": "No Semrush API",
+        "desc": "Access is through dashboard + extension. Official Semrush API endpoints are not part of standard group buy plans."
+      },
+      {
+        "icon": "ShieldAlert",
+        "title": "Fair use",
+        "desc": "No bots or aggressive scraping. That keeps shared accounts stable for the whole pool."
+      }
+    ],
+    "ctaTitle": "Still worth it",
+    "ctaBody": "Even with limits, members usually save massively vs retail Semrush.",
+    "ctaButton": "View plans"
+  },
+  "pricing": {
+    "brandHeading": "Semrush Group Buy",
+    "titleRest": "plans & pricing",
+    "intro": "Pick the plan that matches your budget. Clean pricing, no chrome-extension tier.",
+    "couponLabel": "Limited time offer",
+    "couponDescription": "Get extra 20% off on your first month",
+    "comparisonButton": "Compare plans",
+    "guarantee": "100% risk-free guarantee",
+    "monthlyTitle": "Monthly billing",
+    "monthlySubtitle": "from $5/mo",
+    "yearlyTitle": "Yearly billing",
+    "yearlySubtitle": "pay yearly, save 20%",
+    "recommendedPlanId": "semrush-ahrefs"
+  },
+  "premiumTools": {
+    "eyebrow": "SEO stack",
+    "title": "Premium access",
+    "description": "Typical bundles. Names may vary by stock.",
+    "emptyMessage": "No tools match your search."
+  },
+  "reviews": {
+    "heading": "Member feedback",
+    "intro": "Samples shown below. Replace with your real customer reviews anytime.",
+    "button": "Share feedback"
+  },
+  "faq": {
+    "heading": "FAQ"
+  },
+  "contact": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "message": "Message"
+  },
+  "chat": {
+    "title": "Support",
+    "responseHint": "Typically replies fast"
+  },
+  "article": {
+    "siteName": "Semrush Group Buy",
+    "toc": [
+      {
+        "id": "introduction",
+        "label": "Introduction"
+      },
+      {
+        "id": "what-you-get",
+        "label": "What you get"
+      },
+      {
+        "id": "main-points",
+        "label": "Main points"
+      },
+      {
+        "id": "takeaways",
+        "label": "Takeaways"
+      },
+      {
+        "id": "quick-reference",
+        "label": "Quick reference"
+      }
+    ]
+  }
+}
