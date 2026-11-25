@@ -301,6 +301,63 @@
     "moreFromGuide": "More from this guide",
     "writtenBy": "Written by",
     "checkoutTrust": "Secure checkout · Instant setup",
-    "ctaQuestion": "Ready to compare plans and pick a tier?"
+    "ctaQuestion": "Ready to compare plans and pick a tier?",
+    "startHere": "Start here",
+    "introduction": "Introduction",
+    "overviewText": "Below is a simple guide. You will see what you get. You will see the main ideas for this topic. You will also get a short checklist before you choose a plan.",
+    "whatYouGet": "What you get",
+    "benefitsList": [
+      "Dashboard access to real Semrush modules (not a fake “viewer”).",
+      "Tools you already use like Keyword Magic Site Audit Position Tracking and Domain Overview on supported tiers.",
+      "Fast onboarding. Pay log in and start work without a long sales process.",
+      "Shared infrastructure with fair-use rules so the pool stays stable for everyone."
+    ],
+    "mainPoints": "Main points",
+    "mainPointsSuffix": "simple. Know what is included. Know what is limited. Pick a plan tier that fits how you work day to day.",
+    "checklistLabel": "Checklist",
+    "preSubscribeList": [
+      "Confirm the modules you need are in the plan you are comparing.",
+      "Expect daily or fair-use caps on heavy exports and large audits.",
+      "Use one primary session where possible; simultaneous sessions can hit limits faster.",
+      "Read the transparency section on your provider for refunds and support hours."
+    ],
+    "takeaways": "Takeaways",
+    "summaryText": "If you want the short version focus on stability and limits. Also check that your plan includes the modules you use most.",
+    "quickChecklist": "Quick checklist",
+    "summaryList": [
+      "Group buy access runs through a secure dashboard; feature set follows your tier.",
+      "Limits exist to protect uptime. Plan your heaviest reports accordingly.",
+      "Pricing scales from Lite-style extension use up to agency-oriented bundles.",
+      "When in doubt, start on a mid tier and upgrade if you outgrow credits or tools."
+    ],
+    "quickReference": "Quick reference",
+    "quickDescription": "A compact comparison you can skim. Replace or extend rows as your internal content grows.",
+    "comparisonColumns": [
+      "Topic",
+      "Group buy",
+      "Retail"
+    ],
+    "comparisonRows": [
+      {
+        "topic": "Keyword research",
+        "groupBuy": "Included on Standard+",
+        "retail": "Full Pro / Guru"
+      },
+      {
+        "topic": "Site Audit depth",
+        "groupBuy": "Fair-use daily caps",
+        "retail": "Plan limits"
+      },
+      {
+        "topic": "Typical buyer",
+        "groupBuy": "Freelancers & small teams",
+        "retail": "Larger orgs / direct billing"
+      }
+    ],
+    "ctaButton": "View pricing",
+    "sidebarTitle": "On this page",
+    "sidebarEyebrow": "Get access",
+    "sidebarDescription": "Compare Lite through Agency tiers and start with the toolkit that matches your workflow.",
+    "sidebarButton": "View pricing & plans"
   }
 }
