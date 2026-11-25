@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import {site} from "../config/site";
 import { motion } from "motion/react";
 import { ArrowRight, Search, Link as LinkIcon, BarChart2, Activity, ShieldCheck, TrendingUp } from "lucide-react";
@@ -86,8 +87,8 @@ export function Hero() {
                     <BarChart2 className="w-[18px] h-[18px] text-white" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-xs font-bold text-white truncate">Domain Overview</div>
-                    <div className="text-[9px] font-medium text-muted uppercase tracking-wider">Global DB</div>
+                    <div className="text-xs font-bold text-white truncate">{ui.hero.demoHeading}</div>
+                    <div className="text-[9px] font-medium text-muted uppercase tracking-wider">{ui.hero.demoTag}</div>
                   </div>
                 </div>
                 <div className="flex gap-1.5 shrink-0">
