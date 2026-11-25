@@ -371,35 +371,43 @@
   "featuredTools": [
     {
       "name": "Semrush",
-      "color": "border-primary/25 bg-primary/10"
+      "color": "border-primary/25 bg-primary/10",
+      "logo": "/logos/semrush.svg"
     },
     {
       "name": "Ahrefs",
-      "color": "border-accent/25 bg-accent/10"
+      "color": "border-accent/25 bg-accent/10",
+      "logo": "/logos/ahrefs.png"
     },
     {
       "name": "Canva Pro",
-      "color": "border-cyan-400/20 bg-cyan-500/10"
+      "color": "border-cyan-400/20 bg-cyan-500/10",
+      "logo": "/logos/canva.svg"
     },
     {
       "name": "Grammarly",
-      "color": "border-emerald-400/20 bg-emerald-500/10"
+      "color": "border-emerald-400/20 bg-emerald-500/10",
+      "logo": "/logos/grammarly.svg"
     },
     {
       "name": "Moz Pro",
-      "color": "border-violet-400/20 bg-violet-500/10"
+      "color": "border-violet-400/20 bg-violet-500/10",
+      "logo": "/logos/moz.svg"
     },
     {
       "name": "SpyFu",
-      "color": "border-fuchsia-400/20 bg-fuchsia-500/10"
+      "color": "border-fuchsia-400/20 bg-fuchsia-500/10",
+      "logo": ""
     },
     {
       "name": "Ubersuggest",
-      "color": "border-amber-400/20 bg-amber-500/10"
+      "color": "border-amber-400/20 bg-amber-500/10",
+      "logo": ""
     },
     {
       "name": "Envato",
-      "color": "border-lime-400/20 bg-lime-500/10"
+      "color": "border-lime-400/20 bg-lime-500/10",
+      "logo": "/logos/envato.svg"
     }
   ],
   "allTools": [
@@ -468,5 +476,7 @@
     ]
   },
   "faqIntro": "Billing, limits, toolkit install, and data: everything you need in one place.",
-  "supportWhatsappNumber": "447845432224"
+  "supportWhatsappNumber": "447845432224",
+  "ogImage": "/og.svg",
+  "favicon": "/og.svg"
 }
