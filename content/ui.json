@@ -204,13 +204,31 @@
     "monthlySubtitle": "from $5/mo",
     "yearlyTitle": "Yearly billing",
     "yearlySubtitle": "pay yearly, save 20%",
-    "recommendedPlanId": "semrush-ahrefs"
+    "recommendedPlanId": "semrush-ahrefs",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "usd": "USD",
+    "pkr": "PKR",
+    "recommended": "Recommended for you",
+    "totalTools": "Total tools:",
+    "buyNow": "Buy Now",
+    "compareAll": "Compare all features in detail",
+    "couponOffer": "Limited time offer",
+    "couponText": "Get extra 20% off on your first month",
+    "close": "Close",
+    "clearPricing": "Clear pricing",
+    "clearPricingDescription": "No surprise fees after checkout. Your plan is explained upfront, limits included.",
+    "yearlyBilling": "Yearly billing?",
+    "yearlyDescription": "Lock in your access for a full year and save 20% vs paying monthly."
   },
   "premiumTools": {
     "eyebrow": "SEO stack",
     "title": "Premium access",
-    "description": "Typical bundles. Names may vary by stock.",
-    "emptyMessage": "No tools match your search."
+    "description": "One membership: pro-grade SEO access plus the extra SaaS stack power users expect.",
+    "emptyMessage": "No tools match your search.",
+    "modalTitle": "All tools",
+    "searchPlaceholder": "Search tools…",
+    "close": "Close"
   },
   "reviews": {
     "heading": "Member feedback",
@@ -228,7 +246,8 @@
   },
   "chat": {
     "title": "Support",
-    "responseHint": "Typically replies fast"
+    "responseHint": "Typically replies fast",
+    "whatsappLabel": "WhatsApp chat"
   },
   "article": {
     "siteName": "Semrush Group Buy",
@@ -253,6 +272,18 @@
         "id": "quick-reference",
         "label": "Quick reference"
       }
-    ]
+    ],
+    "overview": "Overview",
+    "benefits": "Key benefits",
+    "benefitsIntro": "Most members care about a few practical outcomes. Here they are in plain language.",
+    "beforeSubscribe": "Before you subscribe",
+    "summary": "Summary",
+    "quickComparison": "Quick comparison",
+    "comparisonTable": "Comparison table",
+    "relatedArticles": "Related articles",
+    "moreFromGuide": "More from this guide",
+    "writtenBy": "Written by",
+    "checkoutTrust": "Secure checkout · Instant setup",
+    "ctaQuestion": "Ready to compare plans and pick a tier?"
   }
 }
