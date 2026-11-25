@@ -1,0 +1,53 @@
+name: Import full Semrush migration ZIP
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: GitHub release tag containing semrush-astro-pagescms-migration.zip
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Get complete ZIP from the selected GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.event.release.tag_name }}
+        run: |
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern 'semrush-astro-pagescms-migration.zip' --dir /tmp
+          test -s /tmp/semrush-astro-pagescms-migration.zip
+      - name: Extract all original and migrated source files
+        run: |
+          mkdir -p /tmp/semrush-import
+          unzip -q /tmp/semrush-astro-pagescms-migration.zip -d /tmp/semrush-import
+          test -f /tmp/semrush-import/semrush-astro-migration/src/pages/index.astro
+          test -f /tmp/semrush-import/semrush-astro-migration/.pages.yml
+          rsync -a /tmp/semrush-import/semrush-astro-migration/ ./
+          test -f src/react/SiteApp.tsx
+          test -f content/site.json
+      - name: Verify complete source and Astro build before updating main
+        run: |
+          npm install
+          npm run verify
+          npm run build
+      - name: Commit and push the fully extracted application
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Import complete Semrush Astro + Pages CMS migration source'
+            git push origin HEAD:main
+          fi
