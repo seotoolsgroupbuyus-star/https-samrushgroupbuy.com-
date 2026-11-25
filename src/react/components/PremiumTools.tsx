@@ -60,10 +60,10 @@ function ToolLogo({ name }: { name: string }) {
   }
 }
 
-const HIGHLIGHT_TOOLS = site.featuredTools;;
+const HIGHLIGHT_TOOLS = site.featuredTools;
 
 /** Full bundle list (25+), same family as Power plan + common group-buy extras */
-const ALL_TOOLS = site.allTools; as const;
+const ALL_TOOLS = site.allTools;
 
 export function PremiumTools() {
   const [modalOpen, setModalOpen] = useState(false);
