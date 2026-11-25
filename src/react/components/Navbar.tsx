@@ -106,7 +106,7 @@ export function Navbar() {
               </div>
 
               <div className="pt-8 border-t border-white/5 space-y-4">
-                <Link href={site.paymentBaseUrl} className="block text-center w-full py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/10 rounded-xl">
+                <Link href={site.paymentBaseUrl} style={{display:"block",textAlign:"center"}} className="w-full py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/10 rounded-xl">
                   {ui.navigation.login}
                 </Link>
                 <Link
