@@ -1,14 +1,8 @@
+import ui from '../../../content/ui.json';
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 
-const comparisonData = [
-  { label: "Monthly cost", official: 28, group: 96, officialLabel: "28%", groupLabel: "96%" },
-  { label: "Accessibility", official: 35, group: 94, officialLabel: "35%", groupLabel: "94%" },
-  { label: "Value for solo SEOs", official: 22, group: 98, officialLabel: "22%", groupLabel: "98%" },
-  { label: "Multi-tool bundle", official: 30, group: 95, officialLabel: "30%", groupLabel: "95%" },
-  { label: "Support responsiveness", official: 75, group: 88, officialLabel: "75%", groupLabel: "88%" },
-  { label: "Uptime / stability", official: 82, group: 99, officialLabel: "82%", groupLabel: "99%" },
-];
+const comparisonData = ui.comparison.rows;
 
 export function ComparisonVisual() {
   return (
@@ -21,10 +15,10 @@ export function ComparisonVisual() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug mb-3">
-            <span className="text-primary">Semrush Group Buy</span> vs direct
+            <span className="text-primary">{ui.comparison.headingBrand}</span> {ui.comparison.headingSuffix}
           </h2>
           <p className="text-muted font-medium text-base md:text-lg leading-relaxed">
-            Side-by-side reality check: official seats vs shared access most solo SEOs actually need.
+            {ui.comparison.intro}
           </p>
         </motion.div>
 
@@ -35,12 +29,12 @@ export function ComparisonVisual() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-2">Without shared access</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-2">{ui.comparison.withoutLabel}</p>
             <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white mb-3 tracking-tight">
-              Retail Semrush
+              {ui.comparison.officialTitle}
             </h3>
             <p className="text-muted font-medium max-w-md mx-auto md:mx-0 leading-relaxed">
-              List price, per-seat rules, and contracts before you even open Keyword Magic.
+              {ui.comparison.officialDescription}
             </p>
           </motion.div>
           <motion.div
@@ -57,12 +51,12 @@ export function ComparisonVisual() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2">With shared access</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2">{ui.comparison.withLabel}</p>
             <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-primary mb-3 tracking-tight">
               Shared access
             </h3>
             <p className="text-muted font-medium max-w-md mx-auto md:ml-auto md:mr-0 leading-relaxed">
-              Dashboard and toolkit workflows you recognize, routed through a stable shared stack.
+              {ui.comparison.groupDescription}
             </p>
           </motion.div>
         </div>
