@@ -111,6 +111,7 @@ content:
           - { name: jobTitle, type: string }
           - { name: bio, type: text }
           - { name: url, type: string }
+          - { name: imageUrl, label: Author photo, type: image, options: { media: uploads } }
   - name: page-copy
     label: Website text, sections and navigation
     type: file
