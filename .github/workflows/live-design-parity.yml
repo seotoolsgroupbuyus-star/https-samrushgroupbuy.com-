@@ -1,0 +1,37 @@
+name: Compare live Semrush and migrated Astro design
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/compare-live-layout.mjs
+      - .github/workflows/live-design-parity.yml
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm run build
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Start built Astro preview
+        run: |
+          npm run preview -- --host 127.0.0.1 > /tmp/semrush-preview.log 2>&1 &
+          for i in {1..40}; do
+            if curl -fsS http://127.0.0.1:4321/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/semrush-preview.log
+          exit 1
+      - name: Compare desktop and mobile layout against original live website
+        run: node scripts/compare-live-layout.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semrush-design-comparison
+          path: reports/live-design/
+          if-no-files-found: ignore
