@@ -1,3 +1,4 @@
+import {site} from '../config/site';
 import ui from '../../../content/ui.json';
 function SemrushMark({ className }: { className?: string }) {
   return (
@@ -24,7 +25,7 @@ export function Logo() {
         className="w-10 h-10 rounded-[11px] bg-primary flex items-center justify-center shadow-[0_4px_14px_rgba(255,115,72,0.4)] border border-white/10 group-hover:shadow-[0_6px_22px_rgba(255,115,72,0.5)] transition-shadow duration-300"
         aria-hidden
       >
-        <SemrushMark className="w-[22px] h-[22px]" />
+        {site.brandLogo ? <img src={site.brandLogo} alt="Brand mark" style={{width:22,height:22,objectFit:"contain"}} /> : <SemrushMark className="w-[22px] h-[22px]" />}
       </div>
       <div className="flex flex-col gap-0.5">
         <span className="text-[17px] font-extrabold tracking-[-0.02em] leading-none text-white">
