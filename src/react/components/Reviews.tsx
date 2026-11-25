@@ -1,3 +1,4 @@
+import ui from '../../../content/ui.json';
 import {site} from "../config/site";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
@@ -16,10 +17,10 @@ export function Reviews() {
             viewport={{ once: true }}
           >
             <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-3 tracking-tight leading-snug max-w-md md:max-w-lg">
-              Member feedback
+              {ui.reviews.heading}
             </h2>
             <p className="text-sm font-medium text-muted">
-              Samples shown below. Replace with your real customer reviews anytime.
+              {ui.reviews.intro}
             </p>
           </motion.div>
           <motion.button
@@ -28,7 +29,7 @@ export function Reviews() {
             whileTap={{ scale: 0.98 }}
             className="glass hover:bg-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/10"
           >
-            Share feedback
+            {ui.reviews.button}
           </motion.button>
         </div>
 
