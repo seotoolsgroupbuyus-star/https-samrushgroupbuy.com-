@@ -58,7 +58,7 @@ export function Navbar() {
                 {ui.navigation.login}
               </Link>
               <Link
-                href="/#pricing"
+                href={ui.navigation.getAccessUrl}
                 className="bg-primary text-white px-6 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,115,72,0.28)] flex items-center gap-2"
               >
                 <Zap className="w-3 h-3 fill-current" />
@@ -110,7 +110,7 @@ export function Navbar() {
                   {ui.navigation.login}
                 </Link>
                 <Link
-                  href="/#pricing"
+                  href={ui.navigation.mobileAccessUrl}
                   className="block w-full bg-primary text-center text-white py-4 text-sm font-black uppercase tracking-widest rounded-xl shadow-[0_0_20px_rgba(255,115,72,0.28)]"
                 >
                   {ui.navigation.mobileAccess}
