@@ -38,9 +38,10 @@ async function inspect(url,label,viewport){
 }
 
 const values=[['desktop',{width:1366,height:850}],['mobile',{width:390,height:844}]];
-for(const [device,viewport] of values){
- const live=await inspect(original,'original-'+device,viewport);
- const local=await inspect(migrated,'astro-'+device,viewport);
+const pages=[['home',''],['privacy','privacy/'],['article','semrush-group-buy-guide/']];
+for(const [device,viewport] of values) for(const [pageName,pathname] of pages){
+ const live=await inspect(original+pathname,'original-'+pageName+'-'+device,viewport);
+ const local=await inspect(migrated+pathname,'astro-'+pageName+'-'+device,viewport);
  const differences=[];
  const compare=(label,a,b)=>{
   if(!a||!b){differences.push(label+': missing element');return}
@@ -56,9 +57,9 @@ for(const [device,viewport] of values){
  compare('footer',live.footer,local.footer);
  if(live.sections.length!==local.sections.length)differences.push('section count '+live.sections.length+' vs '+local.sections.length);
  for(let i=0;i<Math.min(live.sections.length,local.sections.length);i++)compare('section '+(i+1)+' '+live.sections[i].id,live.sections[i],local.sections[i]);
- const report={device,live,local,differences};
- fs.writeFileSync('reports/live-design/'+device+'.json',JSON.stringify(report,null,2));
- results.push({device,liveSections:live.sections.length,migratedSections:local.sections.length,differenceCount:differences.length,differences:differences.slice(0,35)});
+ const report={device,page:pageName,live,local,differences};
+ fs.writeFileSync('reports/live-design/'+pageName+'-'+device+'.json',JSON.stringify(report,null,2));
+ results.push({device,page:pageName,liveSections:live.sections.length,migratedSections:local.sections.length,differenceCount:differences.length,differences:differences.slice(0,35)});
 }
 await browser.close();
 console.log(JSON.stringify(results,null,2));
