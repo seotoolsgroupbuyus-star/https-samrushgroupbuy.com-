@@ -38,6 +38,8 @@ export function Footer() {
             >
               {ui.footer.privacy}
             </Link>
+            <Link href="/terms/" className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">{ui.footer.terms}</Link>
+            <Link href="/refund-policy/" className="text-[11px] font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">{ui.footer.refund}</Link>
             <p className="text-[11px] font-medium text-white/25">
               {ui.footer.copyright}
             </p>
