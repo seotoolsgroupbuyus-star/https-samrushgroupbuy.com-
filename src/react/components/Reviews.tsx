@@ -3,7 +3,8 @@ import {site} from "../config/site";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 
-const reviews = site.reviews;
+// Only publish customer testimonials explicitly confirmed as genuine; keep sample data in CMS but hidden.
+const reviews = site.reviews.filter((review) => 'verified' in review && review.verified === true);
 
 export function Reviews() {
   return (
@@ -35,6 +36,7 @@ export function Reviews() {
           </motion.a>
         </div>
 
+        {reviews.length > 0 && (
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {reviews.map((r, i) => (
             <motion.div
@@ -62,6 +64,7 @@ export function Reviews() {
             </motion.div>
           ))}
         </div>
+        )}
       </div>
     </section>
   );
