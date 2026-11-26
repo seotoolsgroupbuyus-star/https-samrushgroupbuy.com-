@@ -34,7 +34,9 @@
     "operational": "Operational",
     "ssl": "SSL",
     "privacy": "Privacy Policy",
-    "copyright": "© 2026 SemrushGroupBuy"
+    "copyright": "© 2026 SemrushGroupBuy",
+    "terms": "Terms & Conditions",
+    "refund": "Refund Policy"
   },
   "sharedAccess": {
     "titlePrefix": "Why",
