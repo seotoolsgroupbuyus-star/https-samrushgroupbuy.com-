@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../../content/site.json';
+import policy from '../../content/terms.json';
+---
+<Base title={policy.title} description={policy.seoDescription} pathname="/terms/">
+  <main class="mx-auto max-w-4xl px-5 py-20 text-white sm:py-28">
+    <a href="/" class="text-sm font-semibold text-orange-400 hover:underline">← Back to homepage</a>
+    <h1 class="mt-7 text-4xl font-black tracking-tight sm:text-5xl">{policy.title}</h1>
+    <p class="mt-5 max-w-2xl text-slate-300">{policy.seoDescription}</p>
+    <div class="mt-12 space-y-9">
+      {policy.sections.map(section => (
+        <section class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-white sm:text-2xl">{section.heading}</h2>
+          <p class="mt-4 leading-7 text-slate-300">{section.text}</p>
+        </section>
+      ))}
+    </div>
+    <p class="mt-12 text-sm text-slate-300">Questions about an order? <a class="font-semibold text-orange-400 hover:underline" href={'https://wa.me/'+site.supportWhatsappNumber} target="_blank" rel="noopener noreferrer">Contact WhatsApp support</a>.</p>
+    <nav aria-label="Legal pages" class="mt-9 flex flex-wrap gap-6 text-sm text-slate-300">
+      <a class="hover:text-orange-400" href="/privacy/">Privacy Policy</a>
+      <a class="hover:text-orange-400" href="/terms/">Terms & Conditions</a>
+      <a class="hover:text-orange-400" href="/refund-policy/">Refund Policy</a>
+    </nav>
+  </main>
+</Base>
